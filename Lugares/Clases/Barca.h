@@ -19,19 +19,25 @@ Clase: Barca
 Responsabilidad: Representar el funcionamiento de la barca del juego
 Relaciones: 
 - Es un Lugar.h
-- Contiene Personaje.h
+- Contiene Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
 */
-
-#ifndef LUGAR_H
-#define LUGAR_H
-
+#pragma once
+#ifndef BARCA_H
+#define BARCA_H
+#include <iostream>
+#include "Lugar.h"
 #include "Personaje.h"
+#include"Conejo.h"
+#include"Zorro.h"
+#include"Robot.h"
+#include"Lechuga.h"
+using namespace std;
 
-class Lugar
+class Barca
 {
   private:
 };
 
 #else
-class Lugar;
+class Barca;
 #endif

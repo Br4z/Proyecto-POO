@@ -1,5 +1,5 @@
 /*
-Archivo: Lugar.h
+Archivo: Jugador.h
 Autor: 
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
@@ -15,15 +15,17 @@ Licencia: GNU-GPL
 */
 
 /**
-Clase: Lugar
-Responsabilidad: Representar cada uno de los lugares del juego y su funcionamiento
+Clase: Jugador
+Responsabilidad: Representar al jugador y las acciones que puede realizar
 Relaciones: 
-- Contiene Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
+- Conoce un Menu.h
+- Conoce un Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
 */
 #pragma once
-#ifndef LUGAR_H
-#define LUGAR_H
+#ifndef JUGADOR_H
+#define JUGADOR_H
 #include <iostream>
+#include "Lugar.h"
 #include "Personaje.h"
 #include"Conejo.h"
 #include"Zorro.h"
@@ -31,12 +33,11 @@ Relaciones:
 #include"Lechuga.h"
 using namespace std;
 
-class Lugar
+class Jugador
 {
   private:
-  vector<Personaje> personajes;
 };
 
 #else
-class Lugar;
+class Jugador;
 #endif

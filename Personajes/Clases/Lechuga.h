@@ -1,5 +1,5 @@
 /*
-Archivo: Lugar.h
+Archivo: Lechuga.h
 Autor: 
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
@@ -15,28 +15,23 @@ Licencia: GNU-GPL
 */
 
 /**
-Clase: Lugar
-Responsabilidad: Representar cada uno de los lugares del juego y su funcionamiento
+Clase: Lechuga
+Responsabilidad: Representar a una lechuga del juego y su funcionamiento
 Relaciones: 
-- Contiene Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
+- Es un Personaje.h
 */
 #pragma once
-#ifndef LUGAR_H
-#define LUGAR_H
+#ifndef LECHUGA_H
+#define LECHUGA_H
 #include <iostream>
 #include "Personaje.h"
-#include"Conejo.h"
-#include"Zorro.h"
-#include"Robot.h"
-#include"Lechuga.h"
 using namespace std;
 
-class Lugar
+class Lechuga
 {
   private:
-  vector<Personaje> personajes;
 };
 
 #else
-class Lugar;
+class Lechuga;
 #endif

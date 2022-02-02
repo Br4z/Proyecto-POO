@@ -1,5 +1,5 @@
 /*
-Archivo: Barca.cpp
+Archivo: Jugador.cpp
 Autor: 
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>

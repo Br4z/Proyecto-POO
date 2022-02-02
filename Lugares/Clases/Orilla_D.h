@@ -1,5 +1,5 @@
 /*
-Archivo: Orilla_I.h
+Archivo: Orilla_D.h
 Autor: 
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
@@ -15,23 +15,30 @@ Licencia: GNU-GPL
 */
 
 /**
-Clase: Orilla_I
+Clase: Orilla_D
 Responsabilidad: Representar la orilla derecha hacía la que se dirige la barca
 Relaciones: 
-- Contiene Personaje.h
+- Contiene Personaje.h (Conejo.h, Robot.h, Zorro.h, Lechuga.h )
 - 
 */
-
-#ifndef O_H
-#define |BARCA_H
-
+#pragma once
+#ifndef ORILLAD_H
+#define ORILLAD_H
+#include <vector>
+#include "Lugar.h"
 #include "Personaje.h"
+#include "Conejo.h"
+#include "Robot.h"
+#include "Zorro.h"
+#include "Lechuga.h"
+using namespace std;
 
-class Barca
+class Orilla_D
 {
   private:
+  vector<Personaje> personajes;
 };
 
 #else
-class Barca;
+class Orilla_D;
 #endif

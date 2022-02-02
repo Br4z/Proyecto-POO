@@ -16,22 +16,26 @@ Licencia: GNU-GPL
 
 /**
 Clase: Menu
-Responsabilidad: Representar el funcionamiento basico del menu de un juego
+Responsabilidad: Representar el funcionamiento basico del menu del juego
 Relaciones: 
-- Contiene Personaje.h
+- Contiene Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
 - Contiene Lugar.h
 */
-
+#pragma once
 #ifndef MENU_H
 #define MENU_H
 
 #include "Personaje.h"
 #include "Lugar.h"
+#include"Conejo.h"
+#include"Zorro.h"
+#include"Robot.h"
+#include"Lechuga.h"
 
 class Menu
 {
   private:
-};//Natalia el pilar del grupo
+};
 
 #else
 class Menu;

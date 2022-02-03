@@ -1,0 +1,4 @@
+# Excluir configuraciones de replit y compilador
+Makefile
+.replit
+replit.nix

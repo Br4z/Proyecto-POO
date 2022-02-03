@@ -3,3 +3,5 @@ Makefile
 .replit
 replit.nix
 *.o
+main
+.breakpoints

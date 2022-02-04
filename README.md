@@ -1,29 +1,38 @@
+<img align="left" alt="Logo" src="https://i.imgur.com/5uu6xkO.png" height="128"><br>
+
 # Proyecto-POO
 
-class Menu
-{
-    metodo eleccion (movimiento)
-    metodo periste
-    metodo ganaste
-    metodo dibujarTablero
-    
-}
+## Integrantes del grupo:
+
+- Brandon Calderón Prieto 
+-
+-
+-
+
+---
+## Historia:
+
+Hay un robot que debe transportar un zorro, un conejo y una lechuga desde un lado del río hasta la otra orilla, usando una barca. En la barca solo cabe uno de los tres individuos, además del robot. El problema es que si el robot deja solos al zorro y al conejo, el zorro se comerá el conejo. Y si deja solos al conejo y la lechuga, el conejo se comerá la lechuga. El jugador debe controlar qué órdenes dar, para lograr que el robot transporte los tres individuos a la otra orilla, sanos y salvos.
+
+## Reglas:
+
+Como se pudo ver en el enunciado, podemos declarar las reglas como:  
+
+1. La barca solo se puede mover si el robot esta en ella
+2. El conejo no puede quedarse solo con el zorro (<->)
+3. El conejo no puede quedarse solo con la lechuja (<->)
+
+---
+
+## Tecnologia implementadas:
+
+| Tecnologia       |                Descripcion                |
+| :--------------: | :---------------------------------------: |
+|nombre  |  xd |
+
+---
 
 
-class Personaje
-{
-  class Zorro
-  class Conejo
-  ...
-}
 
-class Lugar
-{
-    class orilla derecha
-    class orilla izquierda
-}
-
-
-EL profesor revisa las dos entregas del equipo verificando que cumplan los  objetivos y los requerimientos, además de la exposición. Luego Asigna una nota usando los porcentajes mencionados anteriormente. Sin embargo, cada integrante deberá mostrar el aporte individual  en el proyecto. Para esto, si un estudiante realiza un método, una implementación o una clase, en la documentación  deberá llevar sus datos personales (nombre, email, etc).
 
 

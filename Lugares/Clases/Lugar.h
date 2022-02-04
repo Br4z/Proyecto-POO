@@ -24,17 +24,17 @@ Relaciones:
 #ifndef LUGAR_H
 #define LUGAR_H
 #include <iostream>
-#include "Personaje.h"
-#include"Conejo.h"
-#include"Zorro.h"
-#include"Robot.h"
-#include"Lechuga.h"
+#include "Personajes/Clases/Personaje.h"
+#include"Personajes/Clases/Conejo.h"
+#include"Personajes/Clases/Zorro.h"
+#include"Personajes/Clases/Robot.h"
+#include"Personajes/Clases/Lechuga.h"
 using namespace std;
 
 class Lugar
 {
   private:
-  vector<Personaje> personajes;
+    vector<Personaje> personajes;
 };
 
 #else

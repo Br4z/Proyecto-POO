@@ -19,18 +19,12 @@ Clase: Jugador
 Responsabilidad: Representar al jugador y las acciones que puede realizar
 Relaciones: 
 - Conoce un Menu.h
-- Conoce un Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
 */
 #pragma once
 #ifndef JUGADOR_H
 #define JUGADOR_H
 #include <iostream>
-#include "Lugar.h"
-#include "Personaje.h"
-#include"Conejo.h"
-#include"Zorro.h"
-#include"Robot.h"
-#include"Lechuga.h"
+#include "Menu/Menu.h"
 using namespace std;
 
 class Jugador

@@ -18,25 +18,24 @@ Licencia: GNU-GPL
 Clase: Orilla_D
 Responsabilidad: Representar la orilla derecha hacía la que se dirige la barca
 Relaciones: 
+- Es un Lugar.h
 - Contiene Personaje.h (Conejo.h, Robot.h, Zorro.h, Lechuga.h )
 - 
 */
 #pragma once
 #ifndef ORILLAD_H
 #define ORILLAD_H
-#include <vector>
 #include "Lugar.h"
-#include "Personaje.h"
-#include "Conejo.h"
-#include "Robot.h"
-#include "Zorro.h"
-#include "Lechuga.h"
+#include "Personajes/Clases/Personaje.h"
+#include"Personajes/Clases/Conejo.h"
+#include"Personajes/Clases/Zorro.h"
+#include"Personajes/Clases/Robot.h"
+#include"Personajes/Clases/Lechuga.h"
 using namespace std;
 
 class Orilla_D
 {
   private:
-  vector<Personaje> personajes;
 };
 
 #else

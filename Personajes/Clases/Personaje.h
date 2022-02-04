@@ -18,8 +18,7 @@ Licencia: GNU-GPL
 /**
 Clase: Personaje
 Responsabilidad: Representar a un personaje del juego y su funcionamiento
-Relaciones: 
-- Es un Personaje.h
+Relaciones: Ninguna
  
 */
 #pragma once
@@ -27,12 +26,14 @@ Relaciones:
 #define PERSONAJE_H
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 
 class Personaje;
 {
   private:
+    string nombre;
 };
 
 #else

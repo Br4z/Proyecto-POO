@@ -18,25 +18,24 @@ Licencia: GNU-GPL
 Clase: Orilla_I
 Responsabilidad: Representar la orilla izquierda hacía la que se dirige la barca
 Relaciones: 
+- Es un Lugar.h
 - Contiene Personaje.h (Conejo.h, Robot.h, Zorro.h, Lechuga.h )
 - 
 */
 #pragma once
 #ifndef ORILLAI_H
 #define ORILLAI_H
-#include <vector>
 #include "Lugar.h"
-#include "Personaje.h"
-#include "Conejo.h"
-#include "Robot.h"
-#include "Zorro.h"
-#include "Lechuga.h"
+#include "Personajes/Clases/Personaje.h"
+#include"Personajes/Clases/Conejo.h"
+#include"Personajes/Clases/Zorro.h"
+#include"Personajes/Clases/Robot.h"
+#include"Personajes/Clases/Lechuga.h"
 using namespace std;
 
 class Orilla_I
 {
   private:
-
 };
 
 #else

@@ -27,7 +27,7 @@ Relaciones:
 #include "Personaje.h"
 using namespace std;
 
-class Conejo
+class Conejo : public Personaje
 {
   private:
 };

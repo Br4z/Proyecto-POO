@@ -17,31 +17,23 @@ Licencia: GNU-GPL
 /**
 Clase: Menu
 Responsabilidad: Representar el funcionamiento basico del menu del juego
-Relaciones: 
-- Contiene Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
+Relaciones:
 - Contiene Lugar.h
 - Conoce Jugador.h
 */
 #pragma once
 #ifndef MENU_H
 #define MENU_H
-#include <vector>
 #include "Jugador/Jugador.h"
 #include "Lugares/Clases/Lugar.h"
 #include "Lugares/Clases/Barca.h"
 #include "Lugares/Clases/Orilla_D.h"
 #include "Lugares/Clases/Orilla_I.h"
-#include "Personajes/Clases/Personaje.h"
-#include"Personajes/Clases/Conejo.h"
-#include"Personajes/Clases/Zorro.h"
-#include"Personajes/Clases/Robot.h"
-#include"Personajes/Clases/Lechuga.h"
 
 class Menu
 {
   private:
-    vector<Personaje> personajes;
-    vector<Lugar> lugares;//matriz
+    Lugar *lugares;//Matriz o tablero del juego
 };
 
 #else

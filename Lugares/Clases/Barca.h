@@ -26,14 +26,9 @@ Relaciones:
 #define BARCA_H
 #include <iostream>
 #include "Lugar.h"
-#include "Personajes/Clases/Personaje.h"
-#include"Personajes/Clases/Conejo.h"
-#include"Personajes/Clases/Zorro.h"
-#include"Personajes/Clases/Robot.h"
-#include"Personajes/Clases/Lechuga.h"
 using namespace std;
 
-class Barca
+class Barca : public Lugar
 {
   private:
 };

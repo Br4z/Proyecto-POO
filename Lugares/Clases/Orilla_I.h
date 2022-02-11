@@ -26,14 +26,9 @@ Relaciones:
 #ifndef ORILLAI_H
 #define ORILLAI_H
 #include "Lugar.h"
-#include "Personajes/Clases/Personaje.h"
-#include"Personajes/Clases/Conejo.h"
-#include"Personajes/Clases/Zorro.h"
-#include"Personajes/Clases/Robot.h"
-#include"Personajes/Clases/Lechuga.h"
 using namespace std;
 
-class Orilla_I
+class Orilla_I : public Lugar
 {
   private:
 };

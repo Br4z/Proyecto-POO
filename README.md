@@ -4,10 +4,10 @@
 
 ## Integrantes del grupo:
 
-- Brandon Calderón Prieto 
--
--
--
+- Brandon Calderón Prieto <calderon.brandon@correounivalle.edu.co> <2125974>
+- Juan Sebastian Getial Getial
+- Nicolas Huertas
+- Natico (pilar del grupo, la unica que trabajo)
 
 ---
 ## Historia:
@@ -18,9 +18,11 @@ Hay un robot que debe transportar un zorro, un conejo y una lechuga desde un lad
 
 Como se pudo ver en el enunciado, podemos declarar las reglas como:  
 
-1. La barca solo se puede mover si el robot esta en ella
-2. El conejo no puede quedarse solo con el zorro (<->)
-3. El conejo no puede quedarse solo con la lechuja (<->)
+1. Solo se pueden transportar dos individuos en el barco
+2. La barca solo se puede mover si el robot esta en ella
+3. El conejo no puede quedarse solo con el zorro (<->)
+4. El conejo no puede quedarse solo con la lechuja (<->)
+5. Si saltas sin estar la barca perderas automaticamente
 
 ---
 
@@ -28,7 +30,7 @@ Como se pudo ver en el enunciado, podemos declarar las reglas como:
 
 | Tecnologia       |                Descripcion                |
 | :--------------: | :---------------------------------------: |
-|nombre  |  xd |
+|   GitHub   | Corriendo sobre git (proyecto de código abierto iniciado por el creador de Linux Linus Torvalds), GitHub tiene la finalidad de administrar versiones, añadiendo una interfaz grafica y de otras funcionalidades a lo que se refiere trabajo colaborativo.|
 
 ---
 

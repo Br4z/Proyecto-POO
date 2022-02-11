@@ -24,13 +24,12 @@ Relaciones: Ninguna
 #pragma once
 #ifndef PERSONAJE_H
 #define PERSONAJE_H
-
 #include <iostream>
 #include <string>
 using namespace std;
 
 
-class Personaje;
+class Personaje
 {
   private:
     string nombre;

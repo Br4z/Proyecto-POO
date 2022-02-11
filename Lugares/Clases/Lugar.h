@@ -34,7 +34,7 @@ using namespace std;
 class Lugar
 {
   private:
-    vector<Personaje> personajes;
+    Personaje *personajes;
 };
 
 #else

@@ -4,9 +4,17 @@ using namespace std;
 
 int main() {
  
-string matriz[5][4];
+string matriz[5][4] = {
+    {"Orilla" ,"Barca","","Meta"},
+    {"Robot"  ,     "","",""    },
+    {"Zorro"  ,     "","",""    },
+    {"Conejo" ,     "","",""   },
+    {"Lechuga",     "","",""   }
+};
+  
   char menu = 'S';
   char opcion = 'S';
+  // Estados iniciales de los personajes
   int pasoBarca = 1;
   int pasoRobot = 1;
   int pasoZorro = 1;
@@ -14,37 +22,14 @@ string matriz[5][4];
   int pasoLechuga = 1;
   string finJuego = "";
   
-  matriz[0][0] = "IZQUIER";
-  matriz[1][0] = "Robot";
-  matriz[2][0] = "Zorro";
-  matriz[3][0] = "Conejo";
-  matriz[4][0] = "Lechuga";
-
-  matriz[0][1] = "BARCA";
-  matriz[1][1] = "";
-  matriz[2][1] = "";
-  matriz[3][1] = "";
-  matriz[4][1] = "";
-
-  matriz[0][2] = "";
-  matriz[1][2] = "";
-  matriz[2][2] = "";
-  matriz[3][2] = "";
-  matriz[4][2] = "";
-
-  matriz[0][3] = "DERECHA";
-  matriz[1][3] = "";
-  matriz[2][3] = "";
-  matriz[3][3] = "";
-  matriz[4][3] = "";
   
   system("clear");
 
   do{
 
-    for(int i=0; i<5 ; i++)
+    for(int i = 0; i < 5 ; i++)
     {
-      for(int j=0; j<4; j++){
+      for(int j = 0; j < 4; j++){
         cout << matriz[i][j] << "\t\t";
       }
       cout << "\n";
@@ -459,9 +444,9 @@ string matriz[5][4];
   system("clear");
 
   // Imprimo la matriz
-  for(int i=0; i<5 ; i++)
+  for(int i = 0; i < 5 ; i++)
     {
-      for(int j=0; j<4; j++){
+      for(int j = 0; j < 4; j++){
         cout << matriz[i][j] << "\t\t";
       }
       cout << "\n";

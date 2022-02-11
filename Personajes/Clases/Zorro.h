@@ -16,7 +16,7 @@ Licencia: GNU-GPL
 
 /**
 Clase: Zorro
-Responsabilidad: Representa al Zorro y su funcionamiento
+Responsabilidad: Representar a un Zorro del juego y su funcionamiento
 Relaciones: 
 - Es un Personaje.h
  
@@ -29,7 +29,7 @@ Relaciones:
 using namespace std;
 
 
-class Zorro;
+class Zorro : public Personaje
 {
 
   private:

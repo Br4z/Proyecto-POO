@@ -1,4 +1,5 @@
 /*
+
 Archivo: Lugar.h
 Autor: 
 Getial Getial Juan Sebastian
@@ -19,7 +20,9 @@ Clase: Lugar
 Responsabilidad: Representar cada uno de los lugares del juego y su funcionamiento
 Relaciones: 
 - Contiene Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
+
 */
+
 #pragma once
 #ifndef LUGAR_H
 #define LUGAR_H

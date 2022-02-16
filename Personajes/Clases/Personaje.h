@@ -1,5 +1,6 @@
 
 /*
+
 Archivo: Personaje.h
 Autor: 
 Getial Getial Juan Sebastian
@@ -13,14 +14,17 @@ Cordoba Collazos Angie Natalia
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
+
 */
 
 /**
+
 Clase: Personaje
 Responsabilidad: Representar a un personaje del juego y su funcionamiento
 Relaciones: Ninguna
  
 */
+
 #pragma once
 #ifndef PERSONAJE_H
 #define PERSONAJE_H

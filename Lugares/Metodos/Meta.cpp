@@ -1,5 +1,5 @@
 /*
-Archivo: Lugar.cpp
+Archivo: Meta.cpp
 Autor: 
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>

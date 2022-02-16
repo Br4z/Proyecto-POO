@@ -1,4 +1,5 @@
 /*
+
 Archivo: Robot.h
 Autor: 
 Getial Getial Juan Sebastian
@@ -12,14 +13,18 @@ Cordoba Collazos Angie Natalia
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
+
 */
 
 /**
+
 Clase: Robot
 Responsabilidad: Representar a un Robot del juego y su funcionamiento
 Relaciones: 
 - Es un Personaje.h
+
 */
+
 #pragma once
 #ifndef ROBOT_H
 #define ROBOT_H

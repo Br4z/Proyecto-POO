@@ -1,4 +1,5 @@
 /*
+
 Archivo: Barca.h
 Autor: 
 Getial Getial Juan Sebastian
@@ -12,15 +13,19 @@ Cordoba Collazos Angie Natalia
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
+
 */
 
 /**
+
 Clase: Barca
 Responsabilidad: Representar el funcionamiento de la barca del juego
 Relaciones: 
 - Es un Lugar.h
 - Contiene Personaje.h (Zorro.h, Conejo.h, Lechuga.h, Robot.h)
+
 */
+
 #pragma once
 #ifndef BARCA_H
 #define BARCA_H

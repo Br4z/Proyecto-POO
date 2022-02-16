@@ -48,7 +48,8 @@ string matriz[5][4] = {
     switch(opcion){
       // Barca
       case 'B':case 'b':
-        if(pasoBarca == 1){
+        if(pasoBarca == 1)
+        {
           matriz[0][1] = "";
           matriz[0][2] = "BARCA";
 
@@ -57,7 +58,7 @@ string matriz[5][4] = {
             matriz[1][2] = "\tRobot";
             matriz[3][1] = "";
             matriz[3][2] = "\tConejo";
-          }
+            }
         }
 
         if(pasoBarca == 2){

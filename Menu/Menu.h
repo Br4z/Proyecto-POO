@@ -1,4 +1,5 @@
 /*
+
 Archivo: Menu.h
 Autor: 
 Getial Getial Juan Sebastian
@@ -12,15 +13,19 @@ Cordoba Collazos Angie Natalia
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
+
 */
 
 /**
+
 Clase: Menu
 Responsabilidad: Representar el funcionamiento basico del menu del juego
 Relaciones:
 - Contiene Lugar.h
 - Conoce Jugador.h
+
 */
+
 #pragma once
 #ifndef MENU_H
 #define MENU_H

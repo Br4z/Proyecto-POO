@@ -1,4 +1,5 @@
 /*
+
 Archivo: Jugador.h
 Autor: 
 Getial Getial Juan Sebastian
@@ -12,14 +13,18 @@ Cordoba Collazos Angie Natalia
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
+
 */
 
 /**
+
 Clase: Jugador
 Responsabilidad: Representar al jugador y las acciones que puede realizar
 Relaciones: 
 - Conoce un Menu.h
+
 */
+
 #pragma once
 #ifndef JUGADOR_H
 #define JUGADOR_H

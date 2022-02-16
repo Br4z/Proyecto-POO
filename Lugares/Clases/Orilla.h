@@ -1,5 +1,6 @@
 /*
-Archivo: Orilla_D.h
+
+Archivo: Orilla_I.h
 Autor: 
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
@@ -12,27 +13,30 @@ Cordoba Collazos Angie Natalia
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
+
 */
 
 /**
-Clase: Orilla_D
-Responsabilidad: Representar la orilla derecha hacía la que se dirige la barca
+
+Clase: Orilla
+Responsabilidad: Representar la orilla izquierda hacía la que se dirige la barca
 Relaciones: 
 - Es un Lugar.h
 - Contiene Personaje.h (Conejo.h, Robot.h, Zorro.h, Lechuga.h )
 - 
 */
+
 #pragma once
-#ifndef ORILLAD_H
-#define ORILLAD_H
+#ifndef ORILLA_H
+#define ORILLA_H
 #include "Lugar.h"
 using namespace std;
 
-class Orilla_D : public Lugar
+class Orilla : public Lugar
 {
   private:
 };
 
 #else
-class Orilla_D;
+class Orilla;
 #endif

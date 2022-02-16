@@ -1,5 +1,6 @@
 /*
-Archivo: Lugar.cpp
+
+Archivo: Orilla.cpp
 Autor: 
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
@@ -12,4 +13,5 @@ Cordoba Collazos Angie Natalia
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
+
 */

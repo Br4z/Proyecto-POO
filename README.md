@@ -6,7 +6,7 @@
 
 - Brandon Calderón Prieto <calderon.brandon@correounivalle.edu.co> <2125974>
 - Juan Sebastian Getial Getial
-- Nicolas Huertas
+- Nicolas Huertas (pilar del grupo)
 - Natico (pilar del grupo, la unica que trabajo)
 
 ---

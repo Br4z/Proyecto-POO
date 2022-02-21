@@ -504,7 +504,7 @@ int main()
             break;
         } else if (posicionZorro == 3 && posicionConejo == 3 && posicionLechuga == 3) // La comparacion se puede hacer con cualquiera
         {
-            finJuego = "GANASTE"; // posicionZorro == 3 && posicionConejo == 3 && posicionLechuga == 3
+            finJuego = "GANASTE"; 
             break;
         }  
         

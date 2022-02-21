@@ -60,23 +60,7 @@ int main()
 
         cin >> opcion;
 
-        //Casos donde el jugador pierde y gana (proxima implementacion)
-
-        if(posicionConejo == posicionLechuga && posicionRobot != posicionConejo)
-        {
-            finJuego = "Fin de juego, el Conejo se come la Lechuga.";
-            menu = 'N';
-            break;
-        } else if (posicionConejo == posicionZorro && posicionRobot != posicionConejo)
-        {
-            finJuego = "Fin de juego, el Zorro se come al Conejo.";
-            menu = 'N';
-            break;
-        } else if (posicionZorro == posicionConejo == posicionLechuga && posicionConejo == 3) // La comparacion se puede hacer con cualquiera
-        {
-            finJuego = "GANASTE"; // posicionZorro == 3 && posicionConejo == 3 && posicionLechuga == 3
-            break;
-        }
+        //Casos donde el jugador pierde y gana
 
         switch (opcion)
         {
@@ -507,6 +491,23 @@ int main()
             menu = 'S';
             system("clear");
         }
+        
+        if(posicionConejo == posicionLechuga && posicionRobot != posicionConejo)
+        {
+            finJuego = "Fin de juego, el Conejo se come la Lechuga.";
+            menu = 'N';
+            break;
+        } else if (posicionConejo == posicionZorro && posicionRobot != posicionConejo)
+        {
+            finJuego = "Fin de juego, el Zorro se come al Conejo.";
+            menu = 'N';
+            break;
+        } else if (posicionZorro == 3 && posicionConejo == 3 && posicionLechuga == 3) // La comparacion se puede hacer con cualquiera
+        {
+            finJuego = "GANASTE"; // posicionZorro == 3 && posicionConejo == 3 && posicionLechuga == 3
+            break;
+        }  
+        
     } while (menu == 'S' || menu == 's');
 
     system("clear");

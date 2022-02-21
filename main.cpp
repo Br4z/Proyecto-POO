@@ -2,458 +2,525 @@
 #include <iostream>
 using namespace std;
 
-int main() {
- 
-string matriz[5][4] = {
-    {"Orilla" ,"Barca","","Meta"},
-    {"Robot"  ,     "","",""    },
-    {"Zorro"  ,     "","",""    },
-    {"Conejo" ,     "","",""   },
-    {"Lechuga",     "","",""   }
+int main()
+{
+
+// Se estandarizan los espacios para que no hayan saltos indeseados
+
+    string tablero[5][4] = {
+    {"ORILLA ","BARCA  ","       ","META   "}, 
+    {"Robot  ","       ","       ","       "},
+    {"Zorro  ","       ","       ","       "},
+    {"Conejo ","       ","       ","       "},
+    {"Lechuga","       ","       ","       "}
 };
-  
-  char menu = 'S';
-  char opcion = 'S';
-  // Estados iniciales de los personajes
-  int pasoBarca = 1;
-  int pasoRobot = 1;
-  int pasoZorro = 1;
-  int pasoConejo = 1;
-  int pasoLechuga = 1;
-  string finJuego = "";
-  
-  
-  system("clear");
 
-  do{
+    char menu = 'S';
+    char opcion = 'S';
+    // Estados iniciales de los elementos, aprovechando que solo se mueven horizontalmente.
+    int posicionBarca = 1;
+    int posicionRobot = 0;
+    int posicionZorro = 0;
+    int posicionConejo = 0;
+    int posicionLechuga = 0;
+    // Inicialmente su movimiento es hacia la derecha ->
+    string orientacionRobot =  "Derecha";
+    string orientacionZorro =  "Derecha";
+    string orientacionConejo =  "Derecha";
+    string orientacionLechuga =  "Derecha";
+    string finJuego = "";
 
-    for(int i = 0; i < 5 ; i++)
+    system("clear");
+
+    do
     {
-      for(int j = 0; j < 4; j++){
-        cout << matriz[i][j] << "\t\t";
-      }
-      cout << "\n";
-    }
-
-    cout << "---------------------------------------------" << endl;
-    cout << "*** Jugar ***" << endl;
-    cout << "B - Barca se mueve a la orilla " << endl;
-    cout << "R - El Robot salta a la barca" << endl;
-    cout << "Z - El Zorro salta a la barca" << endl;
-    cout << "C - El Conejo salta a la barca" << endl;
-    cout << "L - El Lechuga salta a la barca" << endl;
-    cout << "Digite su opción:";
-    cin >> opcion;
-
-    switch(opcion){
-      // Barca
-      case 'B':case 'b':
-        if(pasoBarca == 1)
+        for (int i = 0; i < 5; i++)
         {
-          matriz[0][1] = "";
-          matriz[0][2] = "BARCA";
-
-          if(matriz[1][1] == "\tRobot" && matriz[3][1] == "\tConejo"){
-            matriz[1][1] = "";
-            matriz[1][2] = "\tRobot";
-            matriz[3][1] = "";
-            matriz[3][2] = "\tConejo";
+            for (int j = 0; j < 4; j++)
+            {
+                cout << tablero[i][j] << "\t\t";
             }
+            cout << "\n";
         }
 
-        if(pasoBarca == 2){
-          matriz[0][2] = "BARCA";
-          
+        cout << "---------------------------------------------" << endl;
+        cout << "Estados en el juego:" << endl;
+        cout << "Barca: " << posicionBarca << endl;
+        cout << "Robot " << posicionRobot << endl;
+        cout << "Zorro: " << posicionZorro << endl;
+        cout << "Conejo: " << posicionConejo << endl;
+        cout << "Lechuga: " << posicionLechuga << endl;
+        cout << "*** Jugar ***" << endl;
+        cout << "B - Barca se mueve a la orilla " << endl;
+        cout << "R - El Robot salta a la barca" << endl;
+        cout << "Z - El Zorro salta a la barca" << endl;
+        cout << "C - El Conejo salta a la barca" << endl;
+        cout << "L - El Lechuga salta a la barca" << endl;
+        cout << "Digite su opción:";
 
-          if(matriz[1][2] == "\tRobot" && matriz[3][2] == "\tConejo"){
-            matriz[1][2] = "";
-            matriz[1][3] = "\tRobot";
-            matriz[3][2] = "";
-            matriz[3][3] = "\tConejo";
+        cin >> opcion;
 
-            pasoRobot = 4;
-          }
-        }
+        //Casos donde el jugador pierde y gana (proxima implementacion)
 
-        if(pasoBarca == 3){
-          matriz[0][1] = "BARCA";
-          matriz[0][2] = "";
-          
-          if(matriz[1][2] == "\tRobot"){
-            matriz[1][1] = "\tRobot";
-            matriz[1][2] = "";
-          }
-        }
-
-        if(pasoBarca == 4){
-          matriz[0][1] = "";
-          matriz[0][2] = "BARCA";
-
-          if(matriz[1][1] == "\tRobot" && matriz[2][1] == "\tZorro"){
-            matriz[1][1] = "";
-            matriz[1][2] = "\tRobot";
-            matriz[2][1] = "";
-            matriz[2][2] = "\tZorro";
-          }
-
-        }
-
-        if(pasoBarca == 5){
-          matriz[0][2] = "BARCA";
-          
-          if(matriz[1][2] == "\tRobot" && matriz[2][2] == "\tZorro"){
-            matriz[1][2] = "";
-            matriz[1][3] = "\tRobot";
-            matriz[2][2] = "";
-            matriz[2][3] = "\tZorro";
-
-            pasoRobot = 4;
-            pasoConejo = 4;
-          }
-        }
-
-        if(pasoBarca == 6){
-          matriz[0][1] = "BARCA";
-          matriz[0][2] = "";
-          
-          if(matriz[1][2] == "\tRobot"){
-            matriz[1][1] = "\tRobot";
-            matriz[1][2] = "";
-            matriz[3][1] = "\tConejo";
-            matriz[3][2] = "";
-          }
-
-          pasoConejo = 5;
-        }
-
-        if(pasoBarca == 7){
-          matriz[0][1] = "";
-          matriz[0][2] = "BARCA";
-
-          if(matriz[1][1] == "\tRobot" && matriz[4][1] == "\tLechuga"){
-            matriz[1][1] = "";
-            matriz[1][2] = "\tRobot";
-            matriz[4][1] = "";
-            matriz[4][2] = "\tLechuga";
-          }
-
-        }
-
-        if(pasoBarca == 8){
-          matriz[0][2] = "BARCA";
-          
-          if(matriz[1][2] == "\tRobot" && matriz[4][2] == "\tLechuga"){
-            matriz[1][2] = "";
-            matriz[1][3] = "\tRobot";
-            matriz[4][2] = "";
-            matriz[4][3] = "\tLechuga";
-          }
-
-          pasoRobot = 4;
-        }
-
-        if(pasoBarca == 9){
-          matriz[0][1] = "BARCA";
-          matriz[0][2] = "";
-          
-          if(matriz[1][2] == "\tRobot"){
-            matriz[1][1] = "\tRobot";
-            matriz[1][2] = "";
-          }
-
-          pasoConejo = 1;
-        }
-
-        if(pasoBarca == 10){
-          matriz[0][1] = "";
-          matriz[0][2] = "BARCA";
-
-          if(matriz[1][1] == "\tRobot" && matriz[3][1] == "\tConejo"){
-            matriz[1][1] = "";
-            matriz[1][2] = "\tRobot";
-            matriz[3][1] = "";
-            matriz[3][2] = "\tConejo";
-          }
-        }
-
-        if(pasoBarca == 11){
-          matriz[0][2] = "BARCA";
-          
-          if(matriz[1][2] == "\tRobot" && matriz[3][2] == "\tConejo"){
-            matriz[1][2] = "";
-            matriz[1][3] = "\tRobot";
-            matriz[3][2] = "";
-            matriz[3][3] = "\tConejo";
-          }
-
-          if(matriz[1][3] == "\tRobot" && matriz[2][3] == "\tZorro" && matriz[3][3] == "\tConejo" && matriz[4][3] == "\tLechuga"){
-            finJuego = "GANASTE";
-          }
-          
-          menu = 'N';
-          break;
-        }
-
-        pasoBarca += 1;
-        menu = 'S';
-        system("clear");
-        
-      break;
-      // Robot
-      case 'R': case 'r':
-        if(pasoRobot == 1){
-          matriz[1][0] = "";
-          matriz[1][1] = "\tRobot";
-
-          // Valido que la barca este en la orilla
-          if(matriz[0][1] == ""){
-            finJuego = "Fin de juego, el Robot cae al agua.";
-            menu = 'N';
-            break;
-          }
-
-          if(matriz[2][0] == "Zorro" && matriz[3][0] == "Conejo"){
-          finJuego = "Fin de juego, el Zorro se come al Conejo.";
-          menu = 'N';
-          break;
-        }
-        
-          if(matriz[3][0] == "Conejo" && matriz[4][0] == "Lechuga"){
+        if(posicionConejo == posicionLechuga && posicionRobot != posicionConejo)
+        {
             finJuego = "Fin de juego, el Conejo se come la Lechuga.";
             menu = 'N';
             break;
-          }
+        } else if (posicionConejo == posicionZorro && posicionRobot != posicionConejo)
+        {
+            finJuego = "Fin de juego, el Zorro se come al Conejo.";
+            menu = 'N';
+            break;
+        } else if (posicionZorro == posicionConejo == posicionLechuga && posicionConejo == 3) // La comparacion se puede hacer con cualquiera
+        {
+            finJuego = "GANASTE"; // posicionZorro == 3 && posicionConejo == 3 && posicionLechuga == 3
+            break;
         }
 
-        if(pasoRobot == 2){
-          matriz[1][1] = "";
-          matriz[1][2] = "\tRobot";
+        switch (opcion)
+        {
+        // Barca
+        case 'B':
+        case 'b':
+            // Casos para Ida (derecha a izquierda)
+            if (posicionBarca == 1 && posicionRobot == 1) // La barca solo se mueve si el robot esta en ella
+            {
+                // La barca siempre se mueve asi no haya nadie en ella
+                tablero[0][1] = "       "; // Guardamos el espacio de la barca, para que se alinee bien (7 por lechuga)
+                tablero[0][2] = "BARCA  "; 
+                posicionBarca = 2;
+                posicionRobot = 2; // En todos lo casos esto se aplica, asi que nos ahorramos repetirlo.
 
-          if(matriz[0][2] == ""){
-            finJuego = "Fin de juego, el Robot cae al agua.";
-            menu = 'N';
-            break;
-          }
-        }
+                if (posicionConejo == 1)
+                {
+                    tablero[1][1] = "       ";
+                    tablero[1][2] = "Robot  ";
+                    tablero[3][1] = "       ";
+                    tablero[3][2] = "Conejo ";
 
-        if(pasoRobot == 3){
-          matriz[1][2] = "";
-          matriz[1][3] = "\tRobot";
+                    posicionConejo = 2;
 
-          if(matriz[0][3] == ""){
-            finJuego = "Fin de juego, el Robot cae al agua.";
-            menu = 'N';
-            break;
-          }
-        }
+                } else if (posicionZorro == 1)
+                {
+                    tablero[1][1] = "       ";
+                    tablero[1][2] = "Robot  ";
+                    tablero[2][1] = "       ";
+                    tablero[2][2] = "Zorro  ";
 
-        if(pasoRobot == 4){
-          matriz[1][2] = "\tRobot";
-          matriz[1][3] = "";
+                    posicionZorro = 2;
 
-          if(matriz[0][2] == ""){
-            finJuego = "Fin de juego, el Robot cae al agua.";
-            menu = 'N';
-            break;
-          }
-        }
+                } else if (posicionLechuga == 1)
+                {
+                    tablero[1][1] = "       ";
+                    tablero[1][2] = "Robot  ";
+                    tablero[4][1] = "       ";
+                    tablero[4][2] = "Lechuga";
 
-        pasoRobot += 1;
-        menu = 'S';
-        system("clear");
-      break;
-      // Zorro
-      case 'Z': case 'z':
-        if(pasoZorro == 1){
-          matriz[2][0] = "";
-          matriz[2][1] = "\tZorro";
+                    posicionLechuga = 2;
 
-          // Valido que la barca este en la orilla
-          if(matriz[0][1] == ""){
-            finJuego = "Fin de juego, el Zorro cae al agua.";
-            menu = 'N';
-            break;
-          }
-          // Si Conejo está en la misma columna con Lechuga
-          // y no está el robot
-          if(matriz[1][0] == "" && matriz[3][0] == "Conejo" && matriz[4][0] == "Lechuga"){
-            finJuego = "El Conejo se come la Lechuga";
-            menu = 'N';
-            break;
-          }
+                } else  // Este es el caso cuando el robot esta solo
+                {
+                    tablero[1][1] = "       ";
+                    tablero[1][2] = "Robot  ";                    
+                }
 
-          if(matriz[2][1] == "\tZorro" && matriz[3][1] == "\tConejo"){
-            finJuego = "El Zorro se come al conejo";
-            menu = 'N';
-            break;
-          }
-        }
+            } else if (posicionBarca == 2 && posicionRobot == 2) // Casos para vuelta (izquierda a derecha)
+            {   
+                // La barca siempre se mueve asi no haya nadie en ella
+                tablero[0][1] = "BARCA  ";
+                tablero[0][2] = "       "; 
+                posicionBarca = 1;
+                posicionRobot = 1; // En todos lo casos esto se aplica, asi que nos ahorramos repetirlo.
 
-        if(pasoZorro == 2){
-          matriz[2][1] = "";
-          matriz[2][2] = "\tZorro";
+                if (posicionConejo == 2)
+                {
+                    tablero[1][1] = "Robot  ";
+                    tablero[1][2] = "       ";
+                    tablero[3][1] = "Conejo ";
+                    tablero[3][2] = "       ";
 
-          // Valido que la barca este en la orilla
-          if(matriz[0][2] == ""){
-            finJuego = "Fin de juego, el Zorro cae al agua.";
-            menu = 'N';
-            break;
-          }
-        }
+                    posicionConejo = 1;
 
-        if(pasoZorro == 3){
-          matriz[2][2] = "";
-          matriz[2][3] = "\tZorro";
+                }else if (posicionZorro == 2)
+                {
+                    tablero[1][1] = "Robot  ";
+                    tablero[1][2] = "       ";
+                    tablero[2][1] = "Zorro  ";
+                    tablero[2][2] = "       ";
 
-          // Valido que la barca este en la orilla
-          if(matriz[0][3] == ""){
-            finJuego = "Fin de juego, el Zorro cae al agua.";
-            menu = 'N';
-            break;
-          }
-        }
+                    posicionZorro = 1;
 
+                } else if (posicionLechuga == 2)
+                {
+                    tablero[1][1] = "Robot  ";
+                    tablero[1][2] = "       ";
+                    tablero[4][1] = "Lechuga";
+                    tablero[4][2] = "       ";
+
+                    posicionLechuga = 1;  
+
+                } else  // Este es el caso cuando el robot esta solo
+                {
+                    tablero[1][1] = "Robot  ";
+                    tablero[1][2] = "       ";                    
+                }
+            } else 
+            {
+                cout << endl << "Recuerda que la barca no se mueve sin el robot" << endl;
+            }
         
-        pasoZorro += 1;
-        menu = 'S';
-        system("clear");
-      break;
-      // Conejo 
-      case 'C':case 'c':
-        if(pasoConejo == 1){
-          matriz[3][0] = "";
-          matriz[3][1] = "\tConejo";
 
-          // Valido que la barca este en la orilla
-          if(matriz[0][1] == ""){
-            finJuego = "Fin de juego, el Conejo cae al agua.";
-            menu = 'N';
+            menu = 'S';
+            system("clear");
+
             break;
-          }
+        // Robot
+        case 'R':
+        case 'r':
+            // Todos los casos de movimiento del robot
+            if(orientacionRobot == "Derecha")
+            {
+            // Movimientos de ida (derecha a izquierda)
+                if (posicionRobot == 0 ) // Que haya espacio para el se comprueba con los otros personajes
+                { 
+                    // Hago el movimiento en todos los casos
+                    tablero[1][0] = "       ";
+                    tablero[1][1] = "Robot  ";
+                    posicionRobot = 1; // Actualizo la varibale de control
 
-          if(matriz[2][1] == "\tZorro" && matriz[3][1] == "\tConejo"){
-            finJuego = "El Zorro se come al conejo";
-            menu = 'N';
+                    // Pasa cuando no hay barco en el que pueda saltar
+                    if (posicionBarca != 1)
+                    {
+                        finJuego = "Fin de juego, el Robot cae al agua.";
+                        menu = 'N';
+                        break;
+                    }
+                } else if (posicionRobot == 1)
+                {
+                    // Hago el movimiento en todos los casos
+                    tablero[1][1] = "       ";
+                    tablero[1][2] = "Robot  ";
+                    posicionRobot = 2;
+
+                    // El robot solo puede acceder a la posicion 2 moviendo la barca
+
+                    finJuego = "Fin de juego, el Robot cae al agua.";
+                    menu = 'N';
+                    break;
+                    
+                } else if (posicionRobot == 2)
+                {
+                    tablero[1][2] = "       ";
+                    tablero[1][3] = "Robot  ";
+
+                    posicionRobot = 3;
+                    orientacionRobot = "Izquierda";
+                }
+                } else // Cuando la orientacion cambia a la izquierda <-
+                {
+                if(posicionRobot == 3) // Que haya espacio para el se comprueba con los otros personajes
+                {   
+                    // Hago el movimiento en todos lo casos
+                    tablero[1][2] = "Robot  ";
+                    tablero[1][3] = "       ";
+                    posicionRobot = 2; 
+
+                    // Pasa cuando no hay barco en el que pueda saltar
+                    if(posicionBarca != 2)
+                    {
+                        finJuego = "Fin de juego, el Robot cae al agua.";
+                        menu = 'N';
+                        break;                        
+                    } 
+
+                } else if (posicionRobot == 2) 
+                {
+                    tablero[1][2] = "Robot  ";
+                    tablero[1][3] = "       ";
+                    posicionRobot = 1;
+
+                     // El robot solo puede acceder a la posicion 1 moviendo la barca
+
+                    finJuego = "Fin de juego, el Robot cae al agua.";
+                    menu = 'N';
+                    break;
+                
+                } else if (posicionRobot == 1)
+                {
+                    tablero[1][0] = "Robot  ";
+                    tablero[1][1] = "       ";
+                    posicionRobot = 0; 
+                    orientacionRobot = "Derecha"; // Al llegar a la orilla cambia de orientacion                   
+                }
+            }
+            
+            menu = 'S';
+            system("clear");
             break;
-          }
+        // Zorro
+        case 'Z':
+        case 'z':
+            if (orientacionZorro == "Derecha")
+            {
+                if (posicionZorro == 0)
+                {
+                    if(posicionConejo != 1 && posicionLechuga != 1) //Solo se mueve si hay espacio en el barco para el.
+                    {
+                        tablero[2][0] = "       ";
+                        tablero[2][1] = "Zorro  ";
+                        posicionZorro = 1;
 
+                        // Valido que la barca este en la orilla
+                        if (posicionBarca != 1)
+                        {
+                            finJuego = "Fin de juego, el Zorro cae al agua.";
+                            menu = 'N';
+                            break;
+                        } 
+                    }
+                } else if (posicionZorro == 1)
+                {
+                        tablero[2][1] = "      ";
+                        tablero[2][2] = "Zorro ";
+                        posicionZorro = 2; 
+
+                    // Para el zorro solo es posible ir a la posicion 2 con la asigacion del barco 
+
+                        finJuego = "Fin de juego, el Zorro cae al agua.";
+                        menu = 'N';
+                        break;                        
+                } else if (posicionZorro == 2)
+                {
+                    tablero[2][2] = "       ";
+                    tablero[2][3] = "Zorro  ";
+                    posicionZorro = 3;
+
+                    orientacionZorro = "Izquierda";
+                }
+            } else { // Caso orientacion izquierda
+                if (posicionZorro == 3)
+                {
+                    if(posicionConejo != 2 && posicionLechuga != 2) //Solo se mueve si hay espacio en el barco para el.
+                    {
+                        tablero[2][2] = "Zorro  ";
+                        tablero[2][3] = "       ";
+                        posicionZorro = 2;
+
+                        // Valido que la barca este en la orilla
+                        if (posicionBarca != 2)
+                        {
+                            finJuego = "Fin de juego, el Zorro cae al agua.";
+                            menu = 'N';
+                            break;
+                        } 
+                    }
+                } else if (posicionZorro == 2)
+                {
+                        tablero[2][1] = "Zorro  ";
+                        tablero[2][2] = "       ";
+                        posicionZorro = 1; 
+
+                    // Para el zorro solo es posible ir a la posicion 1 con la asigacion del barco 
+
+                        finJuego = "Fin de juego, el Zorro cae al agua.";
+                        menu = 'N';
+                        break;                        
+                } else if (posicionZorro == 1)
+                {
+                    tablero[2][0] = "Zorro  ";
+                    tablero[2][1] = "       ";
+                    posicionZorro = 0;
+
+                    orientacionZorro = "Derecha";
+                }
+            }
+            menu = 'S';
+            system("clear");
+            break;
+
+        // Conejo
+        case 'C':
+        case 'c':
+
+            if (orientacionConejo == "Derecha")
+            {
+                if (posicionConejo == 0)
+                {
+                    if(posicionZorro != 1 && posicionLechuga != 1) //Solo se mueve si hay espacio en el barco para el.
+                    {
+                        tablero[3][0] = "       ";
+                        tablero[3][1] = "Conejo ";
+                        posicionConejo = 1;
+
+                        // Valido que la barca este en la orilla
+                        if (posicionBarca != 1)
+                        {
+                            finJuego = "Fin de juego, el Conejo cae al agua.";
+                            menu = 'N';
+                            break;
+                        } 
+                    }
+                } else if (posicionConejo == 1)
+                {
+                        tablero[3][1] = "       ";
+                        tablero[3][2] = "Conejo ";
+                        posicionConejo = 2; 
+
+                    // Para el Conejo solo es posible ir a la posicion 2 con la asigacion del barco 
+
+                        finJuego = "Fin de juego, el Conejo cae al agua.";
+                        menu = 'N';
+                        break;                        
+                } else if (posicionConejo == 2)
+                {
+                    tablero[3][2] = "       ";
+                    tablero[3][3] = "Conejo ";
+                    posicionConejo = 3;
+
+                    orientacionConejo = "Izquierda";
+                }
+            } else { //  Caso orientacion izquierda
+                if (posicionConejo == 3)
+                {
+                    if(posicionZorro != 2 && posicionLechuga != 2) //Solo se mueve si hay espacio en el barco para el.
+                    {
+                        tablero[3][2] = "Conejo ";
+                        tablero[3][3] = "       ";
+                        posicionConejo = 2;
+
+                        // Valido que la barca este en la orilla
+                        if (posicionBarca != 2)
+                        {
+                            finJuego = "Fin de juego, el Conejo cae al agua.";
+                            menu = 'N';
+                            break;
+                        } 
+                    }
+                } else if (posicionConejo == 2)
+                {
+                        tablero[3][1] = "Conejo ";
+                        tablero[3][2] = "       ";
+                        posicionConejo = 1; 
+
+                    // Para el Conejo solo es posible ir a la posicion 1 con la asigacion del barco 
+
+                        finJuego = "Fin de juego, el Conejo cae al agua.";
+                        menu = 'N';
+                        break;                        
+                } else if (posicionConejo == 1)
+                {
+                    tablero[3][0] = "Conejo ";
+                    tablero[3][1] = "       ";
+                    posicionConejo = 0;
+
+                    orientacionConejo = "Derecha";
+                }
+            }
+            menu = 'S';
+            system("clear");
+            break;
+
+        // Lechuga
+        case 'L':
+        case 'l':
+            if (orientacionLechuga == "Derecha")
+            {
+                if (posicionLechuga == 0)
+                {
+                    if(posicionConejo != 1 && posicionZorro != 1) // Solo se mueve si hay espacio en el barco para el.
+                    {
+                        tablero[4][0] = "       ";
+                        tablero[4][1] = "Lechuga";
+                        posicionLechuga = 1;
+
+                        // Valido que la barca este en la orilla
+                        if (posicionBarca != 1)
+                        {
+                            finJuego = "Fin de juego, el Lechuga cae al agua.";
+                            menu = 'N';
+                            break;
+                        } 
+                    }
+                } else if (posicionLechuga == 1)
+                {
+                        tablero[4][1] = "      ";
+                        tablero[4][2] = "Lechuga";
+                        posicionLechuga = 2; 
+
+                    //Para el Lechuga solo es posible ir a la posicion 2 con la asigacion del barco 
+
+                        finJuego = "Fin de juego, el Lechuga cae al agua.";
+                        menu = 'N';
+                        break;                        
+                } else if (posicionLechuga == 2)
+                {
+                    tablero[4][2] = "       ";
+                    tablero[4][3] = "Lechuga";
+                    posicionLechuga = 3;
+
+                    orientacionLechuga = "Izquierda";
+                }
+            } else { //  Caso orientacion izquierda
+                if (posicionLechuga == 3)
+                {
+                    if(posicionLechuga != 2 && posicionLechuga != 2) //Solo se mueve si hay espacio en el barco para el.
+                    {
+                        tablero[4][2] = "Lechuga";
+                        tablero[4][3] = "       ";
+                        posicionLechuga = 2;
+
+                        // Valido que la barca este en la orilla
+                        if (posicionBarca != 2)
+                        {
+                            finJuego = "Fin de juego, el Lechuga cae al agua.";
+                            menu = 'N';
+                            break;
+                        } 
+                    }
+                } else if (posicionLechuga == 2)
+                {
+                        tablero[4][1] = "Lechuga";
+                        tablero[4][2] = "       ";
+                        posicionLechuga = 1; 
+
+                    //Para el Lechuga solo es posible ir a la posicion 1 con la asigacion del barco 
+
+                        finJuego = "Fin de juego, el Lechuga cae al agua.";
+                        menu = 'N';
+                        break;                        
+                } else if (posicionLechuga == 1)
+                {
+                    tablero[4][0] = "Lechuga";
+                    tablero[4][1] = "       ";
+                    posicionLechuga = 0;
+
+                    orientacionLechuga = "Derecha";
+                }
+            }
+
+            menu = 'S';
+            system("clear");
+            break;
+
+        default:
+            menu = 'S';
+            system("clear");
         }
+    } while (menu == 'S' || menu == 's');
 
-        if(pasoConejo == 2){
-          matriz[3][1] = "";
-          matriz[3][2] = "\tConejo";
+    system("clear");
 
-          // Valido que la barca este en la orilla
-          if(matriz[0][2] == ""){
-            finJuego = "Fin de juego, el Conejo cae al agua.";
-            menu = 'N';
-            break;
-          }
-
-        }
-
-        if(pasoConejo == 3){
-          matriz[3][2] = "";
-          matriz[3][3] = "\tConejo";
-
-          // Valido que la barca este en la orilla
-          if(matriz[0][3] == ""){
-            finJuego = "Fin de juego, el Conejo cae al agua.";
-            menu = 'N';
-            break;
-          }
-
-        }
-
-        if(pasoConejo == 4){
-          matriz[3][2] = "\tConejo";
-          matriz[3][3] = "";
-
-          if(matriz[0][3] == ""){
-            finJuego = "Fin de juego, el Robot cae al agua.";
-            menu = 'N';
-            break;
-          }
-        }
-
-        if(pasoConejo == 5){
-          matriz[3][0] = "\tConejo";
-          matriz[3][1] = "";
-
-          if(matriz[0][1] == ""){
-            finJuego = "Fin de juego, el Robot cae al agua.";
-            menu = 'N';
-            break;
-          }
-        }
-
-        pasoConejo += 1;
-        menu = 'S';
-        system("clear");
-      break;
-      // Lechuga
-      case 'L':case 'l':
-        if(pasoLechuga == 1){
-          matriz[4][0] = "";
-          matriz[4][1] = "\tLechuga";
-
-          // Valido que la barca este en la orilla
-          if(matriz[0][1] == ""){
-            finJuego = "Fin de juego, la Lechuga cae al agua.";
-            menu = 'N';
-            break;
-          }
-        }
-
-        if(pasoLechuga == 2){
-          matriz[4][1] = "";
-          matriz[4][2] = "\tLechuga";
-
-          // Valido que la barca este en la orilla
-          if(matriz[0][2] == ""){
-            finJuego = "Fin de juego, la Lechuga cae al agua.";
-            menu = 'N';
-            break;
-          }
-
-        }
-
-        if(pasoLechuga == 3){
-          matriz[4][2] = "";
-          matriz[4][3] = "\tLechuga";
-
-          // Valido que la barca este en la orilla
-          if(matriz[0][3] == ""){
-            finJuego = "Fin de juego, la Lechuga cae al agua.";
-            menu = 'N';
-            break;
-          }
-
-        }
-
-        pasoLechuga += 1;
-        menu = 'S';
-        system("clear");
-      break;
-
-      default: 
-         menu = 'S';
-         system("clear");
-    }
-  }while(menu == 'S' || menu == 's');
-
-  system("clear");
-
-  // Imprimo la matriz
-  for(int i = 0; i < 5 ; i++)
+    // Imprimo la tablero
+    for (int i = 0; i < 5; i++)
     {
-      for(int j = 0; j < 4; j++){
-        cout << matriz[i][j] << "\t\t";
-      }
-      cout << "\n";
+        for (int j = 0; j < 4; j++)
+        {
+            cout << tablero[i][j] << "\t\t";
+        }
+        cout << "\n";
     }
-  
-  cout << "---------------------------------------------" << endl;
-  cout << "Estado del Juego: " << finJuego << endl; 
 
+    cout << "---------------------------------------------" << endl;
+    cout << "Estado del Juego: " << finJuego << endl;
 }

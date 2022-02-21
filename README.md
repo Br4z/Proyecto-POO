@@ -5,7 +5,7 @@
 ## Integrantes del grupo:
 
 - Brandon Calderón Prieto <calderon.brandon@correounivalle.edu.co> <2125974>
-- Juan Sebastian Getial Getial
+- Juan Sebastian Getial Getial <getial.juan@correounivalle.edu.co> <202124644>
 - Nicolas Huertas (pilar del grupo)
 - Natico (pilar del grupo, la unica que trabajo)
 

@@ -14,7 +14,8 @@ int main()
         jugador.verTablero();
         cout << "-------------------------------------------------------" << endl;
         jugador.verIdsPersonajes();
-        cout << "Digite el id del elemento que desee mover: ";
+        cout<<"Barca   \tB"<<endl;
+        cout << "Digite el id del elemento que desee mover(EN MAYUSCULAS): ";
         cin >> id;
         if (id == "B")
         {

@@ -35,6 +35,6 @@ int main()
         cout << "Has perdido" << endl;
     }
 
-    cout << "El programa finalizo correctamente" << endl;
+    cout << "El programa finalizo correctamente1" << endl;
     return 0;
 }

@@ -9,8 +9,6 @@ Calderon Prieto Brandon
 <bcalderonprieto@gmail.com>
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Cordoba Collazos Angie Natalia
-<natalia8cordoba1908@gmail.com>
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
@@ -18,11 +16,9 @@ Licencia: GNU-GPL
 */
 
 /**
-
 Clase: Personaje
 Responsabilidad: Representar a un personaje del juego y su funcionamiento
 Relaciones: Ninguna
- 
 */
 
 #pragma once
@@ -35,8 +31,15 @@ using namespace std;
 
 class Personaje
 {
-  private:
-    string nombre;
+    protected:
+        string nombre;
+        string id;
+    public:
+        Personaje();
+        ~Personaje();
+        string getNombre();
+        void addToNombre(string _nombre);
+        string getId();
 };
 
 #else

@@ -8,8 +8,6 @@ Calderon Prieto Brandon
 <bcalderonprieto@gmail.com>
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Cordoba Collazos Angie Natalia
-<natalia8cordoba1908@gmail.com>
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
@@ -17,12 +15,10 @@ Licencia: GNU-GPL
 */
 
 /**
-
 Clase: Zorro
 Responsabilidad: Representar a un Zorro del juego y su funcionamiento
 Relaciones: 
 - Es un Personaje.h
- 
 */
 
 #pragma once
@@ -36,7 +32,11 @@ using namespace std;
 class Zorro : public Personaje
 {
 
-  private:
+    private:
+
+    public:
+        Zorro();
+        ~Zorro();
 };
 
 #else

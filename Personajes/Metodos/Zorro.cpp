@@ -1,4 +1,5 @@
 /*
+
 Archivo: Zorro.cpp
 Autor: 
 Getial Getial Juan Sebastian
@@ -7,9 +8,23 @@ Calderon Prieto Brandon
 <bcalderonprieto@gmail.com>
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Cordoba Collazos Angie Natalia
-<natalia8cordoba1908@gmail.com>
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
+
 */
+
+#include "../Clases/Zorro.h"
+#include <iostream>
+using namespace std;
+
+Zorro::Zorro()
+{
+    nombre = "Zorro";
+    id = "Z";
+}
+
+Zorro::~Zorro()
+{
+
+}

@@ -8,8 +8,6 @@ Calderon Prieto Brandon
 <bcalderonprieto@gmail.com>
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Cordoba Collazos Angie Natalia
-<natalia8cordoba1908@gmail.com>
 Fecha Creacion: 2022-01-29
 Fecha Ultima Modificacion: 2022-01-29
 Licencia: GNU-GPL
@@ -24,6 +22,7 @@ Relaciones:
 - Es un Personaje.h
 
 */
+
 #pragma once
 #ifndef LECHUGA_H
 #define LECHUGA_H
@@ -33,7 +32,11 @@ using namespace std;
 
 class Lechuga : public Personaje
 {
-  private:
+    private:
+
+    public:
+        Lechuga();
+        ~Lechuga();
 };
 
 #else

@@ -1,10 +1,12 @@
 #include <iostream>
-#include "Jugador/Jugador.h"
+#include <string.h>
+#include "HEADER FILES/Jugador.h"
 using namespace std;
 
 int main()
 {
-    string id;
+    string decoracion = "------------------------------------------------------- \n";
+    string ID;
     Jugador jugador;
     jugador.setPersonajes();
     cout << "Bienvenido al juego" << endl;
@@ -12,17 +14,19 @@ int main()
     {
         system("clear");
         jugador.verTablero();
-        cout << "-------------------------------------------------------" << endl;
+        cout << decoracion;
         jugador.verIdsPersonajes();
         cout << "Digite el id del elemento que desee mover: ";
-        cin >> id;
-        if (id == "B")
+        cin >> ID;
+        ID[0] = toupper(ID[0]);
+        
+        if (ID == "B")
         {
             jugador.moverBarca();
         }
         else
         {
-            jugador.moverPersonaje(id);
+            jugador.moverPersonaje(ID);
         }
     }
     if (jugador.getWinOrLoser())

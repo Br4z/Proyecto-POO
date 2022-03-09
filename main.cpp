@@ -16,6 +16,7 @@ int main()
         jugador.verTablero();
         cout << decoracion;
         jugador.verIdsPersonajes();
+        cout<< "Barco  \t\tB"<<endl;
         cout << "Digite el id del elemento que desee mover: ";
         cin >> ID;
         ID[0] = toupper(ID[0]);

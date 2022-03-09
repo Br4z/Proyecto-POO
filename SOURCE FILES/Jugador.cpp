@@ -142,52 +142,86 @@ void Jugador::moverPersonaje(string idPersonaje)
                     //Se verifica que el lugar donde se movera el personaje no este lleno
                     if (menu.getLugar(auxPos)->lleno() == false)
                     {
-                        //Se 
-                        menu.setPersonajeEnLugar(auxPos, j, aux);
+                        //Se pone el personaje en el lugar dado, y en el mismo indice donde se encontro
+                        menu.setPersonajeEnLugar(auxPos, j, aux);//aux es el personaje
+
+                        //Se remueve el personaje del lugar en el que estaba
                         menu.getLugar(i)->removerPersonaje(j);
                     }
+                    //Se le asigna true a la var encontrado
                     encontrado = true;
+                    //Se termina el segundo for
                     break;
                 }
             }
         }
+        //Se verifica que se haya encontrado al personaje
         if (encontrado == true)
         {
+            //Se termina el for principal
             break;
         }
     }
 }
 
+//Mueve el lugar Barca
 void Jugador::moverBarca()
 {
+    //Puntero auxiliar que apunta a un lugar
     Lugar *auxLugar = nullptr;
+
+    //Var auxiliar que contendra la posicion donde se movera la barca
     int posAux;
-    for (int i = 1; i < 3; i++)
+
+    //Se recorre los lugares desde el indice 1 hasta el 2, ya que esas son las posiciones donde puede estar la barca
+    for (int i = 1; i < 3; i++)//i representara el indice de cada lugar
     {
+        //Se le asigna al puntero auxiliar un lugar del tablero
         auxLugar = menu.getLugar(i);
+
+        //Se verifica si auxLugar es la barca
         if (auxLugar->getNombre() == "Barca")
         {
+            //Se verifica si la barca puede moverse
             if (auxLugar->movimientoPermitido())
             {
+                //Deacuerdo al indice donde se encuentre la barca se le asigna el valor a posAux
                 if (i == 1)
                 {
+                    //La barca se movera al indice 2
                     posAux = 2;
                 }
                 else
                 {
+                    //La barca se movera al indice 1
                     posAux = 1;
                 }
+
+                //Se guarda el lugar donde se movera la barca en un puntero auxiliar
                 Lugar *aux = menu.getLugar(posAux);
+
+                //Se remueve el lugar donde se movera la barca
                 menu.removerLugar(posAux);
+
+                //Se mueve la barca al lugar dado por posAux
                 menu.setLugar(posAux, auxLugar);
+
+                //Se remueve la barca de su posicion anterior
                 menu.removerLugar(i);
+
+                //Se pone el lugar anteroriormente guardado donde estaba la barca
                 menu.setLugar(i, aux);
+
+                //En palabras sencillas, la barca y el lugar donde se mueve se intercambian
             }
+            
+            //Se termina el for
             break;
         }
     }
 }
 
+//Devulve true si el juego esta en curso, o false si termino
 bool Jugador::estadoDelJuego()
 {
     //Var auxiliar
@@ -202,8 +236,10 @@ bool Jugador::estadoDelJuego()
             cout << "Fin del juego" << endl;
             //Se cambia la var auxiliar a false
             auxEstado = false;
+
             //Y se le asigna false al atributo winOrLoser de Jugador.h
             winOrLoser = false;
+
             //Se termina el for
             break;
         }
@@ -217,6 +253,7 @@ bool Jugador::estadoDelJuego()
         {
             //Se cambia la var auxiliar a false
             auxEstado = false;
+
             //Y se le asigna false al atributo winOrLoser de Jugador.h
             winOrLoser = false;
         }
@@ -227,6 +264,7 @@ bool Jugador::estadoDelJuego()
     {
         //Se cambia la var auxiliar a false
         auxEstado = false;
+
         //Y se le asigna true al atributo winOrLoser de Jugador.h
         winOrLoser = true;
     }
@@ -235,11 +273,13 @@ bool Jugador::estadoDelJuego()
     return auxEstado;
 }
 
+//Muestra los IDS de los persoanjes
 void Jugador::verIdsPersonajes()
 {
     menu.mostrarIdsPersonajes();
 }
 
+//Retorna el atributo winOrLoser de Jugador.h
 bool Jugador::getWinOrLoser()
 {
     return winOrLoser;

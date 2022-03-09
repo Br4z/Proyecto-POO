@@ -32,6 +32,7 @@ string Personaje::getNombre()
     return nombre;
 }
 
+//Le añade algun string al nombre y al ID del personaje
 void Personaje::addToNombre(string nombre)
 {
     nombre += nombre;

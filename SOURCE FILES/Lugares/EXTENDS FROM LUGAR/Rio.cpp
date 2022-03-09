@@ -28,6 +28,7 @@ Rio::~Rio()
 
 }
 
+//
 bool Rio::alguienCayoAlRio()
 {
     bool alguienCayoAlRio = false;

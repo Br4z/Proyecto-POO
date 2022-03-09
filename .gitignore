@@ -5,3 +5,5 @@ replit.nix
 *.o
 main
 .breakpoints
+# Configuraciones de vscode
+.vscode/

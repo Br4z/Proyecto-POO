@@ -18,7 +18,7 @@ Licencia: GNU-GPL
 #include <iostream>
 using namespace std;
 
-Orilla_I::Orilla_I(int _numPersonajes) : Lugar(_numPersonajes)
+Orilla::Orilla(int _numPersonajes) : Lugar(_numPersonajes)
 {
     nombre = "Orilla";
     Personaje *aux;
@@ -40,7 +40,7 @@ Orilla_I::Orilla_I(int _numPersonajes) : Lugar(_numPersonajes)
     aux = nullptr;
 }
 
-Orilla_I::~Orilla_I()
+Orilla::~Orilla()
 {
     for (int i = 0; i < numPersonajes; i++)
     {

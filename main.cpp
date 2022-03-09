@@ -31,11 +31,11 @@ int main()
     }
     if (jugador.getWinOrLoser())
     {
-        cout << "Felicidades, ganaste el juego" << endl;
+        cout << "Felicidades, ganaste el juego !" << endl;
     }
     else
     {
-        cout << "Has perdido" << endl;
+        cout << "Has perdido !" << endl;
     }
 
     cout << "El programa finalizo correctamente" << endl;

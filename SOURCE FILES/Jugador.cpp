@@ -34,7 +34,7 @@ void Jugador::setPersonajes()
     cout << "Digita cuantos (en caso de no querrer digita 0): ";
     cin >> aux;
     numPersonajes += aux;
-    menu.setNumPersonajes(numPersonajes);
+    menu.setNumPersonajes(numPersonajes); // Establece el numero de personajes del tablero y los espacio en los lugares.
 
     int numPersonajesExtra = numPersonajes - 4;
     Personaje *personajeExtra = nullptr;
@@ -62,10 +62,12 @@ void Jugador::setPersonajes()
         else if (aux == 4)
         {
             personajeExtra = new Conejo();
+        } else {
+            cout << ("Por favor escoga una opcion correcta !");
         }
 
         string auxStr = to_string(i + 1);
-        personajeExtra->addToNombre(auxStr);
+        personajeExtra->addToNombre(auxStr); // Se le añade (el numero, como diferenciador) al nombre que ya tiene.
         menu.setPersonajeEnLugar(0, pos, personajeExtra);
         personajeExtra = nullptr;
     }

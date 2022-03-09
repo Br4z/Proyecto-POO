@@ -29,7 +29,7 @@ void Menu::setNumPersonajes(int _numPersonajes)
 
     Lugar *aux;
 
-    aux = new Orilla_I(numPersonajes);
+    aux = new Orilla(numPersonajes);
     lugares[0] = aux;
     aux = nullptr;
 
@@ -57,7 +57,7 @@ Menu::~Menu()
 
 void Menu::dibujarTablero()
 {
-    for (int l = 0; l < 4; l++)
+    for (int l = 0; l < 4; l++) // 4 por el numero de lugares
     {
         cout << lugares[l]->getNombre() << "\t\t";
     }
@@ -91,12 +91,6 @@ void Menu::setLugar(int indice, Lugar *lugar)
     lugares[indice] = lugar;
 }
 
-void Menu::dibujarLugar(int indice)
-{
-
-    lugares[indice]->mostrarPersonajes();
-}
-
 void Menu::setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaje)
 {
     lugares[cualLugar]->addPersonaje(indice, personaje);
@@ -109,7 +103,7 @@ void Menu::removerLugar(int indice)
 
 void Menu::setIdsPersonajes()
 {
-    int aux = lugares[0]->getNumPersonajes();
+    int aux = lugares[0]->getNumPersonajes(); // El numero de personajes siempre es igual a los que aparacen en la orilla
     for (int i = 0; i < aux; i++)
     {
         idsPersonajes.push_back(lugares[0]->getPersonaje(i)->getId());
@@ -125,23 +119,11 @@ void Menu::setNombresPersonajes()
     }
 }
 
-/*
-void Menu::addId(string id)
-{
-    idsPersonajes.push_back(id);
-    cout<<"Se agrego: "<<id<<endl;
-}
-void Menu::addNombrePersonaje(string nombre)
-{
-    nombresPersonajes.push_back(nombre);
-    cout<<"Se agrego: "<<nombre<<endl;
-}
-*/
 
 void Menu::mostrarIdsPersonajes()
 {
     int aux = idsPersonajes.size();
-    cout << "Personaje\tId" << endl;
+    cout << "Personaje\tID" << endl;
     cout << "---------\t--" << endl;
     for (int i = 0; i < aux; i++)
     {

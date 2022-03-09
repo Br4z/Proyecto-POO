@@ -65,7 +65,7 @@ int Lugar::getNumPersonajes()
 }
 
 
-void Lugar::addPersonaje(int indice, Personaje* personaje)
+void Lugar::addPersonaje(int indice, Personaje* personaje) // Del vector de 
 {
     personajes[indice] = personaje;
 }

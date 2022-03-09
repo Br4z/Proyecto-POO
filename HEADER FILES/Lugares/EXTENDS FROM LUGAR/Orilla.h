@@ -29,13 +29,13 @@ Relaciones:
 #include "../Lugar.h"
 using namespace std;
 
-class Orilla_I : public Lugar
+class Orilla : public Lugar
 {
     private:
 
     public:
-        Orilla_I(int _numPersonajes);
-        ~Orilla_I();
+        Orilla(int _numPersonajes);
+        ~Orilla();
 };
 
 #else

@@ -8,14 +8,15 @@ int main()
     string decoracion = "------------------------------------------------------- \n";
     string ID;
     Jugador jugador;
-    //Se establecen los personajes
+    // Se establecen los personajes
     jugador.setPersonajes();
     cout << "Bienvenido al juego" << endl;
-    //Se verifica el estado del juego en cada ciclo
+    // Se verifica el estado del juego en cada ciclo
     while (jugador.estadoDelJuego())
     {
         system("clear");
-        //Se dibuja el tablero
+        // Se dibuja el tablero
+        cout << decoracion;
         jugador.verTablero();
         cout << decoracion;
         jugador.verIdsPersonajes();

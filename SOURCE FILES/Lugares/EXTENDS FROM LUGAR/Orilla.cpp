@@ -18,22 +18,22 @@ Licencia: GNU-GPL
 #include <iostream>
 using namespace std;
 
-//Contructor de Orilla
+// Contructor de Orilla
 Orilla::Orilla(int _numPersonajes) : Lugar(_numPersonajes)
 {
     nombre = "Orilla";
 
-    //Puntero auxiliar que apuntara a un personaje
+    // Puntero auxiliar que apuntara a un personaje
     Personaje *aux;
 
-    //Se le asigna un personaje al puntero auxiliar
+    // Se le asigna un personaje al puntero auxiliar
     aux = new Robot();
 
-    //Se agrega el puntero(persoanje) al indice indicado
+    // Se agrega el puntero(persoanje) al indice indicado
     personajes[0] = aux;
     aux = nullptr;
 
-    //Se repiten los pasos anteriores con cada tipo de personaje
+    // Se repiten los pasos anteriores con cada tipo de personaje
 
     aux = new Zorro();
     personajes[1] = aux;

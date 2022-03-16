@@ -85,6 +85,7 @@ void Jugador::setPersonajes()
 
         // Se le añade el auxStr al nombre y el ID del personajeExtra
         personajeExtra->addToNombre(auxStr); // Se le añade (el numero, como diferenciador) al nombre y el ID que ya tiene.
+
         // Se agrega al personajeExtra en la orilla y en la posicion dada por la var auxiliar pos
         menu.setPersonajeEnLugar(0, pos, personajeExtra);
         // Notese que siempre se agrega en la orilla, por ello el primer parametro es 0 siempre

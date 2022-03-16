@@ -33,10 +33,10 @@ string Personaje::getNombre()
 }
 
 // Le añade algun string al nombre y al ID del personaje
-void Personaje::addToNombre(string nombre)
+void Personaje::addToNombre(string strExtra)
 {
-    nombre += nombre;
-    ID += nombre;
+    this->nombre += strExtra;
+    this->ID += strExtra;
 }
 
 string Personaje::getId()

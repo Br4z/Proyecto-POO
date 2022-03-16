@@ -104,33 +104,12 @@ void Tablero::dibujarTablero()
     }
 }
 
-// Retorna el lugar(puntero) del indice que recibe
-Lugar *Tablero::getLugar(int indice)//indice representara el indice de un lugar
-{
-    // Retorna el lugar(puntero) de la lista de punteros lugares de Tablero.h segun el indice dado
-    return lugares[indice];
-}
-
-// Asigna un lugar a la lista de punteros lugares de Tablero.h en el indice dado
-void Tablero::setLugar(int indice, Lugar *lugar)//indice representara el indice de un lugar y *lugar un puntero que apunta a un lugar
-{
-    // Se le asigna el lugar dado en el indice dado a la lista de punteros lugares de Tablero.h
-    lugares[indice] = lugar;
-}
 
 // Asigna un personaje en un lugar y indice dado
 void Tablero::setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaje)
 {
     // Añade el personaje en lugar e indice dados
     lugares[cualLugar]->addPersonaje(indice, personaje);
-}
-
-// Asigna nullptr a un puntero de la lista de punteros lugares de Tablero.h
-void Tablero::removerLugar(int cualLugar)//cualLugar representara el indice de un puntero de lugares de Tablero.h
-{
-    // Se le asigna nullptr al puntero lugar del indice dado
-    lugares[cualLugar] = nullptr;
-    // cabe recalcar que el lugar al que estuviera apuntando no se elimina
 }
 
 // Agrega los IDS de cada personaje al vector idsPersonajes de Tablero.h

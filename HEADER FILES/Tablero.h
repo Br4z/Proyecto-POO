@@ -46,9 +46,6 @@ class Tablero
         Tablero(int numPersonajes);
         ~Tablero();
         void dibujarTablero();
-        Lugar *getLugar(int indice);
-        void setLugar(int indice, Lugar *lugar);
-        void removerLugar(int indice);
         void setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaje);
         void setIdsPersonajes();
         void setNombresPersonajes();

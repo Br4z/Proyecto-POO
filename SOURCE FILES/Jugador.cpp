@@ -109,62 +109,7 @@ void Jugador::verTablero()
 // Mueve el personaje del idPersonaje dado
 void Jugador::moverPersonaje(string idPersonaje)
 {
-    // Var auxiliar que contendra la posicion(lugar) donde se movera el personaje
-    int auxPos;
-    
-    // Var auxiliar que dira si se ha encontrado el personaje
-    bool encontrado = false;
-
-    // Se recorre cada lugar
-    for (int i = 0; i < 4; i++)//i representara el indice de cada lugar
-    {
-        // Se recorre cada personaje
-        for (int j = 0; j < tablero->getLugar(i)->getNumPersonajes(); j++)//i representara el indice de cada personaje
-        {
-            // Se verfica que el puntero personaje no apunte a nullptr
-            if (tablero->getLugar(i)->getPersonaje(j) != nullptr)
-            {
-                //Se verifica que el ID del personaje sea igual al recibido como parametro
-                if (tablero->getLugar(i)->getPersonaje(j)->getId() == idPersonaje)
-                {
-                    // Se crea un puntero personaje auxiliar que apunta al personaje encontrado
-                    Personaje *aux = tablero->getLugar(i)->getPersonaje(j);
-
-                    // Segun el indice(lugar) donde fue encontrado se definira el lugar donde se movera
-                    if (i == 0 || i == 2)
-                    {
-                        // Se le asigna a auxPos el indice(lugar) donde fue encontrado y se le suma 1
-                        auxPos = i + 1;
-                    }
-                    else
-                    {
-                        // Se le asigna a auxPos el indice(lugar) donde fue encontrado y se le resta 1
-                        auxPos = i - 1;
-                    }
-
-                    // Se verifica que el lugar donde se movera el personaje no este lleno
-                    if (tablero->getLugar(auxPos)->lleno() == false)
-                    {
-                        // Se pone el personaje en el lugar dado, y en el mismo indice donde se encontro
-                        tablero->setPersonajeEnLugar(auxPos, j, aux);//aux es el personaje
-
-                        // Se remueve el personaje del lugar en el que estaba
-                        tablero->getLugar(i)->removerPersonaje(j);
-                    }
-                    // Se le asigna true a la var encontrado
-                    encontrado = true;
-                    // Se termina el segundo for
-                    break;
-                }
-            }
-        }
-        // Se verifica que se haya encontrado al personaje
-        if (encontrado == true)
-        {
-            // Se termina el for principal
-            break;
-        }
-    }
+    tablero->moverPersonaje(idPersonaje);
 }
 
 // Mueve el lugar Barca

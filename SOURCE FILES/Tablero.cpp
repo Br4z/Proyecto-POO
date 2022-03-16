@@ -49,13 +49,6 @@ Tablero::Tablero(int numPersonajes)
     aux = nullptr;
 }
 
-// Establece el numero de personajes y define el tamaño de los lugares
-void Tablero::setNumPersonajes(int _numPersonajes)
-{
-    // Se le asigna el numero de personajes recibido al atributo numPersonajes de Tablero.h
-    numPersonajes = _numPersonajes;
-}
-
 Tablero::~Tablero()
 {
     // Se recorre la lista de punteros lugares
@@ -180,5 +173,67 @@ void Tablero::mostrarIdsPersonajes()
     for (int i = 0; i < aux; i++)//i representara el indice de cada ID y nombre
     {
         cout << nombresPersonajes[i] << "    \t" << idsPersonajes[i] << endl;
+    }
+}
+
+
+//
+void Tablero::moverPersonaje(string idPersonaje)
+{
+    // Var auxiliar que contendra la posicion(lugar) donde se movera el personaje
+    int auxPos;
+    
+    // Var auxiliar que dira si se ha encontrado el personaje
+    bool encontrado = false;
+
+    // Se recorre cada lugar
+    for (int i = 0; i < 4; i++)//i representara el indice de cada lugar
+    {
+        // Se recorre cada personaje
+        for (int j = 0; j < lugares[i]->getNumPersonajes(); j++)//j representara el indice de cada personaje
+        {
+            // Se verfica que el puntero personaje no apunte a nullptr
+            if (lugares[i]->getPersonaje(j) != nullptr)
+            {
+                //Se verifica que el ID del personaje sea igual al recibido como parametro
+                if (lugares[i]->getPersonaje(j)->getId() == idPersonaje)
+                {
+                    // Se crea un puntero personaje auxiliar que apunta al personaje encontrado
+                    Personaje *aux = lugares[i]->getPersonaje(j);
+
+                    // Segun el indice(lugar) donde fue encontrado se definira el lugar donde se movera
+                    if (i == 0 || i == 2)
+                    {
+                        // Se le asigna a auxPos el indice(lugar) donde fue encontrado y se le suma 1
+                        auxPos = i + 1;
+                    }
+                    else
+                    {
+                        // Se le asigna a auxPos el indice(lugar) donde fue encontrado y se le resta 1
+                        auxPos = i - 1;
+                    }
+
+                    // Se verifica que el lugar donde se movera el personaje no este lleno
+                    if (lugares[auxPos]->lleno() == false)
+                    {
+                        // Se pone el personaje en el lugar dado, y en el mismo indice donde se encontro
+                        lugares[auxPos]->addPersonaje(j, aux);//aux es el personaje
+
+                        // Se remueve el personaje del lugar en el que estaba
+                        lugares[i]->removerPersonaje(j);
+                    }
+                    // Se le asigna true a la var encontrado
+                    encontrado = true;
+                    // Se termina el segundo for
+                    break;
+                }
+            }
+        }
+        // Se verifica que se haya encontrado al personaje
+        if (encontrado == true)
+        {
+            // Se termina el for principal
+            break;
+        }
     }
 }

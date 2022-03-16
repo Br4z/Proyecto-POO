@@ -49,12 +49,11 @@ class Tablero
         Lugar *getLugar(int indice);
         void setLugar(int indice, Lugar *lugar);
         void removerLugar(int indice);
-        void dibujarLugar(int indice);
-        void setNumPersonajes(int _numPersonajes);
         void setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaje);
         void setIdsPersonajes();
         void setNombresPersonajes();
         void mostrarIdsPersonajes();
+        void moverPersonaje(string idPersonaje);
 };
 
 #else

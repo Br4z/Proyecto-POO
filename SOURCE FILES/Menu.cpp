@@ -74,7 +74,7 @@ void Menu::dibujarTablero()
     for (int l = 0; l < 4; l++) // 4 por el numero de lugares
     {
         // Se imprime el nombre de cada lugar
-        cout << "| " << lugares[l]->getNombre() << "\t\t";
+        cout << lugares[l]->getNombre() << "\t\t|";
     }
     cout << endl;
 
@@ -84,21 +84,20 @@ void Menu::dibujarTablero()
         // Se recorre cada lugar
         for (int j = 0; j < 4; j++)// j representara el indice de cada lugar
         {
-            // Puntero auxiliar que apunta a un lugar
-            Lugar *auxLugar = nullptr;
+            // Puntero auxiliar que apunta a un lugar j
+            // Se le asigna al puntero auxiliar un lugar del tablero
+            Lugar *auxLugar = lugares[j];
 
             // Se verifica si el puntero(personaje) apunta a nullptr
-            if (lugares[j]->getPersonaje(i) == nullptr)
+            if (auxLugar->getPersonaje(i) == nullptr)
             {
-                // Se le asigna al puntero auxiliar un lugar del tablero
-                auxLugar = lugares[j];
                 // Simulando el agua donde esta el rio
                 if(auxLugar->getNombre() == "Rio")
                 {
-                    cout << "~~~~~~\t";
+                    cout << "~~~~~~~~~~\t|";
 
                 } else {
-                cout << "\t\t";
+                cout << "\t\t|";
 
                 }
             }
@@ -106,7 +105,7 @@ void Menu::dibujarTablero()
             else
             {
                 // Se imprime el nombre del personaje
-                cout << "| " << lugares[j]->getPersonaje(i)->getNombre() << "\t|";
+                cout << auxLugar->getPersonaje(i)->getNombre() << "   \t|";
             }
         }
         cout << endl;

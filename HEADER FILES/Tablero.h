@@ -55,6 +55,7 @@ class Tablero
         void mostrarIdsPersonajes();
         void moverPersonaje(string idPersonaje);
         void moverBarca();
+        string estadoDelJuego();
 };
 
 #else

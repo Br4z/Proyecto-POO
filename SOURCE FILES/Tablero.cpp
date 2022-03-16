@@ -294,3 +294,35 @@ void Tablero::moverBarca()
         }
     }
 }
+
+//
+string Tablero::estadoDelJuego()
+{
+    //var aux Estado
+    string estado = "En Juego";
+
+    // Se verifica si el ultimo lugar(La Meta) esta lleno, es decir si todos los personajes estan ahi
+    if (lugares[3]->lleno())
+    {
+        estado = "Ganado";
+    }
+    else
+    {
+        // Se recorre cada lugar
+        for (int i = 0; i < 4; i++)
+        {
+            // Se verifica si alguien fue comido o cayo al rio en cada lugar
+            if (lugares[i]->alguienFueComido() || lugares[i]->alguienCayoAlRio())
+            {
+                cout << "Fin del juego" << endl;
+
+                estado = "Perdido";
+                // Se termina el for
+                break;
+            }
+        }
+    }
+
+    // Finalmente se retorna la var auxiliar
+    return estado;
+}

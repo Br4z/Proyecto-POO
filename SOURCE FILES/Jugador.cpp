@@ -121,53 +121,26 @@ void Jugador::moverBarca()
 // Devulve true si el juego esta en curso, o false si termino
 bool Jugador::estadoDelJuego()
 {
-    // Var auxiliar
-    bool auxEstado = true;
+    //Var auxiliar
+    string estado = tablero->estadoDelJuego();
 
-    // Se recorre cada lugar
-    for (int i = 0; i < 4; i++)
+    //Se verfica cada caso
+    if(estado != "En Juego")
     {
-        // Se verifica si alguien fue comido en cada lugar
-        if (tablero->getLugar(i)->alguienFueComido())
+        if(estado == "Ganado")
         {
-            cout << "Fin del juego" << endl;
-            // Se cambia la var auxiliar a false
-            auxEstado = false;
-
-            // Y se le asigna false al atributo winOrLoser de Jugador.h
-            winOrLoser = false;
-
-            // Se termina el for
-            break;
+            winOrLoser = true;
         }
-    }
-
-    // Se recorre desde el lugar 1 hasta el lugar 2, ya que en estas posiciones es donde puede estar la barca
-    for (int j = 1; j < 3; j++)
-    {
-        // Se verfica si cad lugar alguien cayo al rio
-        if (tablero->getLugar(j)->alguienCayoAlRio())
+        else
         {
-            // Se cambia la var auxiliar a false
-            auxEstado = false;
-
-            // Y se le asigna false al atributo winOrLoser de Jugador.h
             winOrLoser = false;
         }
+        return false;
     }
-
-    // Se verifica si el ultimo lugar(La Meta) esta lleno, es decir si todos los personajes estan ahi
-    if (tablero->getLugar(3)->lleno())
+    else
     {
-        // Se cambia la var auxiliar a false
-        auxEstado = false;
-
-        // Y se le asigna true al atributo winOrLoser de Jugador.h
-        winOrLoser = true;
+        return true;
     }
-
-    // Finalmente se retorna la var auxiliar
-    return auxEstado;
 }
 
 // Muestra los IDS de los persoanjes

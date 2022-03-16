@@ -237,3 +237,60 @@ void Tablero::moverPersonaje(string idPersonaje)
         }
     }
 }
+
+//
+void Tablero::moverBarca()
+{
+    // Puntero auxiliar que apunta a un lugar
+    Lugar *auxLugar = nullptr;
+
+    // Var auxiliar que contendra la posicion donde se movera la barca
+    int posAux;
+
+    // Se recorre los lugares desde el indice 1 hasta el 2, ya que esas son las posiciones donde puede estar la barca
+    for (int i = 1; i < 3; i++)// i representara el indice de cada lugar
+    {
+        // Se le asigna al puntero auxiliar un lugar del tablero
+        auxLugar = lugares[i];
+
+        // Se verifica si auxLugar es la barca
+        if (auxLugar->getNombre() == "Barca")
+        {
+            // Se verifica si la barca puede moverse
+            if (auxLugar->movimientoPermitido())
+            {
+                // Deacuerdo al indice donde se encuentre la barca se le asigna el valor a posAux
+                if (i == 1)
+                {
+                    // La barca se movera al indice 2
+                    posAux = 2;
+                }
+                else
+                {
+                    //La barca se movera al indice 1
+                    posAux = 1;
+                }
+
+                // Se guarda el lugar donde se movera la barca en un puntero auxiliar
+                Lugar *aux = lugares[posAux];
+
+                // Se remueve el lugar donde se movera la barca, NO SE ELIMINA 
+                lugares[posAux] = nullptr;
+
+                // Se mueve la barca al lugar dado por posAux
+                lugares[posAux] = auxLugar;
+
+                // Se remueve la barca de su posicion anterior, NO SE ELIMINA
+                lugares[i] = nullptr;
+
+                // Se pone el lugar anteroriormente guardado donde estaba la barca
+                lugares[i] = aux;
+
+                //En palabras sencillas, la barca y el lugar donde se mueve se intercambian
+            }
+            
+            // Se termina el for
+            break;
+        }
+    }
+}

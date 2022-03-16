@@ -54,6 +54,7 @@ class Tablero
         void setNombresPersonajes();
         void mostrarIdsPersonajes();
         void moverPersonaje(string idPersonaje);
+        void moverBarca();
 };
 
 #else

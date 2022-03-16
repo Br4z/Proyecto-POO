@@ -43,7 +43,7 @@ class Tablero
         vector<string> nombresPersonajes;
 
     public:
-        Tablero();
+        Tablero(int numPersonajes);
         ~Tablero();
         void dibujarTablero();
         Lugar *getLugar(int indice);

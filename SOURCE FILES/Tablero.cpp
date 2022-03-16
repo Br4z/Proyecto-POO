@@ -18,17 +18,9 @@ Licencia: GNU-GPL
 #include "../HEADER FILES/Tablero.h"
 using namespace std;
 
-Tablero::Tablero()
+Tablero::Tablero(int numPersonajes)
 {
-    
-}
-
-// Establece el numero de personajes y define el tamaño de los lugares
-void Tablero::setNumPersonajes(int _numPersonajes)
-{
-    // Se le asigna el numero de personajes recibido al atributo numPersonajes de Tablero.h
-    numPersonajes = _numPersonajes;
-
+    this->numPersonajes = numPersonajes;
     // Se crea un puntero(auxiliar) que apunta a un lugar
     Lugar *aux;
 
@@ -55,6 +47,13 @@ void Tablero::setNumPersonajes(int _numPersonajes)
     // Se le asigna el puntero auxiliar a el indice 3 de la lista de punteros lugares de Tablero.h
     lugares[3] = aux;
     aux = nullptr;
+}
+
+// Establece el numero de personajes y define el tamaño de los lugares
+void Tablero::setNumPersonajes(int _numPersonajes)
+{
+    // Se le asigna el numero de personajes recibido al atributo numPersonajes de Tablero.h
+    numPersonajes = _numPersonajes;
 }
 
 Tablero::~Tablero()

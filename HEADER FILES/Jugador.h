@@ -31,7 +31,7 @@ using namespace std;
 class Jugador
 {
     private:
-        Tablero tablero;
+        Tablero *tablero;
         bool winOrLoser;
 
     public:

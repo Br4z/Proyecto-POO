@@ -18,20 +18,20 @@ Licencia: GNU-GPL
 Clase: Jugador
 Responsabilidad: Representar al jugador y las acciones que puede realizar
 Relaciones:
-- Conoce un Menu.h
+- Conoce un Tablero.h
 */
 
 #pragma once
 #ifndef JUGADOR_H
 #define JUGADOR_H
 #include <iostream>
-#include "Menu.h"
+#include "Tablero.h"
 using namespace std;
 
 class Jugador
 {
     private:
-        Menu menu;
+        Tablero tablero;
         bool winOrLoser;
 
     public:

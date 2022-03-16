@@ -1,6 +1,6 @@
 /*
 
-Archivo: Menu.cpp
+Archivo: Tablero.cpp
 Autor:
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
@@ -15,18 +15,18 @@ Licencia: GNU-GPL
 */
 
 #include <iostream>
-#include "../HEADER FILES/Menu.h"
+#include "../HEADER FILES/Tablero.h"
 using namespace std;
 
-Menu::Menu()
+Tablero::Tablero()
 {
     
 }
 
 // Establece el numero de personajes y define el tamaño de los lugares
-void Menu::setNumPersonajes(int _numPersonajes)
+void Tablero::setNumPersonajes(int _numPersonajes)
 {
-    // Se le asigna el numero de personajes recibido al atributo numPersonajes de Menu.h
+    // Se le asigna el numero de personajes recibido al atributo numPersonajes de Tablero.h
     numPersonajes = _numPersonajes;
 
     // Se crea un puntero(auxiliar) que apunta a un lugar
@@ -34,30 +34,30 @@ void Menu::setNumPersonajes(int _numPersonajes)
 
     // Se le asigna dinamicamente un objeto Orilla al puntero auxiliar
     aux = new Orilla(numPersonajes);
-    // Se le asigna el puntero auxiliar a el indice 0 de la lista de punteros lugares de Menu.h
+    // Se le asigna el puntero auxiliar a el indice 0 de la lista de punteros lugares de Tablero.h
     lugares[0] = aux;
     aux = nullptr;
 
     // Se le asigna dinamicamente un objeto Barca al puntero auxiliar
     aux = new Barca(numPersonajes);
-    // Se le asigna el puntero auxiliar a el indice 1 de la lista de punteros lugares de Menu.h
+    // Se le asigna el puntero auxiliar a el indice 1 de la lista de punteros lugares de Tablero.h
     lugares[1] = aux;
     aux = nullptr;
 
     // Se le asigna dinamicamente un objeto Rio al puntero auxiliar
     aux = new Rio(numPersonajes);
-    // Se le asigna el puntero auxiliar a el indice 2 de la lista de punteros lugares de Menu.h
+    // Se le asigna el puntero auxiliar a el indice 2 de la lista de punteros lugares de Tablero.h
     lugares[2] = aux;
     aux = nullptr;
 
     // Se le asigna dinamicamente un objeto Meta al puntero auxiliar
     aux = new Meta(numPersonajes);
-    // Se le asigna el puntero auxiliar a el indice 3 de la lista de punteros lugares de Menu.h
+    // Se le asigna el puntero auxiliar a el indice 3 de la lista de punteros lugares de Tablero.h
     lugares[3] = aux;
     aux = nullptr;
 }
 
-Menu::~Menu()
+Tablero::~Tablero()
 {
     // Se recorre la lista de punteros lugares
     for (int i = 0; i < 4; i++)
@@ -68,9 +68,9 @@ Menu::~Menu()
     }
 }
 
-void Menu::dibujarTablero()
+void Tablero::dibujarTablero()
 {
-    // Se recorre cada lugar de la lista de punteros lugares de Menu.h
+    // Se recorre cada lugar de la lista de punteros lugares de Tablero.h
     for (int l = 0; l < 4; l++) // 4 por el numero de lugares
     {
         // Se imprime el nombre de cada lugar
@@ -113,36 +113,36 @@ void Menu::dibujarTablero()
 }
 
 // Retorna el lugar(puntero) del indice que recibe
-Lugar *Menu::getLugar(int indice)//indice representara el indice de un lugar
+Lugar *Tablero::getLugar(int indice)//indice representara el indice de un lugar
 {
-    // Retorna el lugar(puntero) de la lista de punteros lugares de Menu.h segun el indice dado
+    // Retorna el lugar(puntero) de la lista de punteros lugares de Tablero.h segun el indice dado
     return lugares[indice];
 }
 
-// Asigna un lugar a la lista de punteros lugares de Menu.h en el indice dado
-void Menu::setLugar(int indice, Lugar *lugar)//indice representara el indice de un lugar y *lugar un puntero que apunta a un lugar
+// Asigna un lugar a la lista de punteros lugares de Tablero.h en el indice dado
+void Tablero::setLugar(int indice, Lugar *lugar)//indice representara el indice de un lugar y *lugar un puntero que apunta a un lugar
 {
-    // Se le asigna el lugar dado en el indice dado a la lista de punteros lugares de Menu.h
+    // Se le asigna el lugar dado en el indice dado a la lista de punteros lugares de Tablero.h
     lugares[indice] = lugar;
 }
 
 // Asigna un personaje en un lugar y indice dado
-void Menu::setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaje)
+void Tablero::setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaje)
 {
     // Añade el personaje en lugar e indice dados
     lugares[cualLugar]->addPersonaje(indice, personaje);
 }
 
-// Asigna nullptr a un puntero de la lista de punteros lugares de Menu.h
-void Menu::removerLugar(int cualLugar)//cualLugar representara el indice de un puntero de lugares de Menu.h
+// Asigna nullptr a un puntero de la lista de punteros lugares de Tablero.h
+void Tablero::removerLugar(int cualLugar)//cualLugar representara el indice de un puntero de lugares de Tablero.h
 {
     // Se le asigna nullptr al puntero lugar del indice dado
     lugares[cualLugar] = nullptr;
     // cabe recalcar que el lugar al que estuviera apuntando no se elimina
 }
 
-// Agrega los IDS de cada personaje al vector idsPersonajes de Menu.h
-void Menu::setIdsPersonajes()
+// Agrega los IDS de cada personaje al vector idsPersonajes de Tablero.h
+void Tablero::setIdsPersonajes()
 {
     // Var aux que tiene como valor el numero de personajes
     int aux = lugares[0]->getNumPersonajes(); // El numero de personajes siempre es igual a los que aparacen en la orilla
@@ -155,8 +155,8 @@ void Menu::setIdsPersonajes()
     }
 }
 
-// Agrega los nombres de cada personaje al vector nombresPersonajes de Menu.h
-void Menu::setNombresPersonajes()
+// Agrega los nombres de cada personaje al vector nombresPersonajes de Tablero.h
+void Tablero::setNombresPersonajes()
 {
     // Var aux que tiene como valor el numero de personajes
     int aux = lugares[0]->getNumPersonajes();
@@ -170,7 +170,7 @@ void Menu::setNombresPersonajes()
 }
 
 // Muestra los IDS de cada personaje
-void Menu::mostrarIdsPersonajes()
+void Tablero::mostrarIdsPersonajes()
 {
     // Var aux que contiene el numero de IDS
     int aux = idsPersonajes.size();

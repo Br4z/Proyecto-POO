@@ -1,6 +1,6 @@
 /*
 
-Archivo: Menu.h
+Archivo: Tablero.h
 Autor:
 Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
@@ -15,16 +15,16 @@ Licencia: GNU-GPL
 */
 
 /**
-Clase: Menu
-Responsabilidad: Representar el funcionamiento basico del menu del juego
+Clase: Tablero
+Responsabilidad: Representar el funcionamiento basico del Tablero del juego
 Relaciones:
 - Contiene Lugar.h
 - Conoce Jugador.h
 */
 
 #pragma once
-#ifndef MENU_H
-#define MENU_H
+#ifndef TABLERO_H
+#define TABLERO_H
 #include "Lugares/Lugar.h"
 #include "Lugares/EXTENDS FROM LUGAR/Orilla.h"
 #include "Lugares/EXTENDS FROM LUGAR/Barca.h"
@@ -34,7 +34,7 @@ Relaciones:
 
 using namespace std;
 
-class Menu
+class Tablero
 {
     private:
         Lugar *lugares[4]; // Tablero o matriz
@@ -43,8 +43,8 @@ class Menu
         vector<string> nombresPersonajes;
 
     public:
-        Menu();
-        ~Menu();
+        Tablero();
+        ~Tablero();
         void dibujarTablero();
         Lugar *getLugar(int indice);
         void setLugar(int indice, Lugar *lugar);
@@ -58,5 +58,5 @@ class Menu
 };
 
 #else
-class Menu;
+class Tablero;
 #endif

@@ -24,6 +24,7 @@ Jugador::Jugador()
 
 Jugador::~Jugador()
 {
+    delete tablero;
 }
 
 void Jugador::setPersonajes()

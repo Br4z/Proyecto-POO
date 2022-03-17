@@ -20,7 +20,7 @@ using namespace std;
 
 Rio::Rio(int _numPersonajes) : Lugar(_numPersonajes)
 {
-    nombre = "Rio";
+    nombre = " Rio";
 }
 
 Rio::~Rio()

@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    string decoracion = "------------------------------------------------------- \n";
+    string decoracion = " --------------------------------------------------------------- \n";
     string ID;
     Jugador jugador;
     // Se establecen los personajes
@@ -21,9 +21,11 @@ int main()
         cout << decoracion;
         jugador.verIdsPersonajes();
         cout<< "Barco  \t\tB"<<endl;
+        cout << "---------\t---" << endl; // Mas decoracion
         cout << "Digite el id del elemento que desee mover: ";
         cin >> ID;
-        ID[0] = toupper(ID[0]);
+        ID[0] = toupper(ID[0]); // Como las ids de los personajes estan en mayusculas
+        // esto se asegura que la entrada siempre sea una mayuscula
         
         if (ID == "B")
         {

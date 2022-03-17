@@ -61,18 +61,21 @@ Tablero::~Tablero()
 }
 
 void Tablero::dibujarTablero()
-{
+{    
+
+    cout << "|"; // Primer caracter
     // Se recorre cada lugar de la lista de punteros lugares de Tablero.h
     for (int l = 0; l < 4; l++) // 4 por el numero de lugares
     {
         // Se imprime el nombre de cada lugar
-        cout << lugares[l]->getNombre() << "\t\t|";
+        cout << "     " << lugares[l]->getNombre() << "\t|"; // El primer \t es para centrar los nombres de los lugares.
     }
-    cout << endl;
+    cout << endl << " --------------------------------------------------------------- " << endl;
 
     // Se recorre cada personaje
-    for (int i = 0; i < numPersonajes; i++)//i representara el indice de cada personaje
+    for (int i = 0; i < numPersonajes; i++)// i representara el indice de cada personaje
     {
+        cout << "|"; // Primer caracter
         // Se recorre cada lugar
         for (int j = 0; j < 4; j++)// j representara el indice de cada lugar
         {
@@ -84,9 +87,9 @@ void Tablero::dibujarTablero()
             if (auxLugar->getPersonaje(i) == nullptr)
             {
                 // Simulando el agua donde esta el rio
-                if(auxLugar->getNombre() == "Rio")
+                if(auxLugar->getNombre() == " Rio")
                 {
-                    cout << "~~~~~~~~~~\t|";
+                    cout << "~~~~~~~~~~~~~~~|";
 
                 } else {
                 cout << "\t\t|";

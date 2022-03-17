@@ -4,6 +4,7 @@ Makefile
 replit.nix
 *.o
 main
+*.exe
 .breakpoints
 # Configuraciones de vscode
 .vscode/

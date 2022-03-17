@@ -34,7 +34,7 @@ class Rio : public Lugar
 
     public:
         Rio(int _numPersonajes);
-        ~Rio();
+        virtual ~Rio();
         virtual bool alguienCayoAlRio();
 };
 

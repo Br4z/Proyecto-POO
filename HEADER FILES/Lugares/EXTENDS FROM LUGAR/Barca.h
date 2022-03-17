@@ -35,7 +35,7 @@ class Barca : public Lugar
 
     public:
         Barca(int _numPersonajes);
-        ~Barca();
+        virtual ~Barca();
         virtual bool movimientoPermitido();
         virtual bool lleno();
 };

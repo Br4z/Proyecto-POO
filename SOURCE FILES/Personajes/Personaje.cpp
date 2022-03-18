@@ -20,7 +20,6 @@ using namespace std;
 
 Personaje::Personaje()
 {
-    nombre = "NoName";
 }
 
 Personaje::~Personaje()

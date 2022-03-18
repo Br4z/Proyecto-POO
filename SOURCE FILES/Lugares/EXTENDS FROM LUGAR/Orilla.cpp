@@ -23,29 +23,11 @@ Orilla::Orilla(int _numPersonajes) : Lugar(_numPersonajes)
 {
     nombre = "Orilla";
 
-    // Puntero auxiliar que apuntara a un personaje
-    Personaje *aux;
-
-    // Se le asigna un personaje al puntero auxiliar
-    aux = new Robot();
-
-    // Se agrega el puntero(persoanje) al indice indicado
-    personajes[0] = aux;
-    aux = nullptr;
-
-    // Se repiten los pasos anteriores con cada tipo de personaje
-
-    aux = new Zorro();
-    personajes[1] = aux;
-    aux = nullptr;
-
-    aux = new Lechuga();
-    personajes[2] = aux;
-    aux = nullptr;
-
-    aux = new Conejo();
-    personajes[3] = aux;
-    aux = nullptr;
+    // Se agregan los personajes por defecto
+    personajes[0] = new Robot();
+    personajes[1] = new Zorro();
+    personajes[2] = new Lechuga();
+    personajes[3] = new Conejo();
 }
 
 Orilla::~Orilla()

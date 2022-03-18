@@ -27,7 +27,6 @@ Lugar::Lugar(int _numPersonajes)
     // Se establece el atributo numPersonajes
     numPersonajes = _numPersonajes;
 
-    // OPCIONAL
     // Se recorre cada personaje de la lista de punteros(personajes)
     for(int i = 0; i < numPersonajes; i++)//i representara el indice de cada personaje
     {

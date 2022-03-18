@@ -20,32 +20,11 @@ using namespace std;
 
 Tablero::Tablero(int numPersonajes)
 {
-    // Se crea un puntero(auxiliar) que apunta a un lugar
-    Lugar *aux;
-
-    // Se le asigna dinamicamente un objeto Orilla al puntero auxiliar
-    aux = new Orilla(numPersonajes);
-    // Se le asigna el puntero auxiliar a el indice 0 de la lista de punteros lugares de Tablero.h
-    lugares[0] = aux;
-    aux = nullptr;
-
-    // Se le asigna dinamicamente un objeto Barca al puntero auxiliar
-    aux = new Barca(numPersonajes);
-    // Se le asigna el puntero auxiliar a el indice 1 de la lista de punteros lugares de Tablero.h
-    lugares[1] = aux;
-    aux = nullptr;
-
-    // Se le asigna dinamicamente un objeto Rio al puntero auxiliar
-    aux = new Rio(numPersonajes);
-    // Se le asigna el puntero auxiliar a el indice 2 de la lista de punteros lugares de Tablero.h
-    lugares[2] = aux;
-    aux = nullptr;
-
-    // Se le asigna dinamicamente un objeto Meta al puntero auxiliar
-    aux = new Meta(numPersonajes);
-    // Se le asigna el puntero auxiliar a el indice 3 de la lista de punteros lugares de Tablero.h
-    lugares[3] = aux;
-    aux = nullptr;
+    //Se agregan los lugares por defecto
+    lugares[0] = new Orilla(numPersonajes);
+    lugares[1] = new Barca(numPersonajes);
+    lugares[2] = new Rio(numPersonajes);
+    lugares[3] = new Meta(numPersonajes);
 }
 
 Tablero::~Tablero()
@@ -180,7 +159,7 @@ void Tablero::moverPersonaje(string idPersonaje)
                 if (lugares[i]->getPersonaje(j)->getId() == idPersonaje)
                 {
                     // Se crea un puntero personaje auxiliar que apunta al personaje encontrado
-                    Personaje *aux = lugares[i]->getPersonaje(j);
+                    Personaje *personajeEncontrado = lugares[i]->getPersonaje(j);
 
                     // Segun el indice(lugar) donde fue encontrado se definira el lugar donde se movera
                     if (i == 0 || i == 2)
@@ -198,7 +177,7 @@ void Tablero::moverPersonaje(string idPersonaje)
                     if (lugares[auxPos]->lleno() == false)
                     {
                         // Se pone el personaje en el lugar dado, y en el mismo indice donde se encontro
-                        lugares[auxPos]->addPersonaje(j, aux);//aux es el personaje
+                        lugares[auxPos]->addPersonaje(j, personajeEncontrado);//aux es el personaje
 
                         // Se remueve el personaje del lugar en el que estaba
                         lugares[i]->removerPersonaje(j);

@@ -161,10 +161,10 @@ bool Lugar::alguienFueComido()
     return alguienFueComido;
 }
 
-// Esta funcion solo tiene sentido para la barca, por lo que aqui no esta definida correctamente
+// Esta funcion solo tiene sentido para la barca
 bool Lugar::movimientoPermitido()
 {
-    return NULL;
+    return true;
 }
 
 // Retorna true si el lugar esta lleno de personajes, si no false

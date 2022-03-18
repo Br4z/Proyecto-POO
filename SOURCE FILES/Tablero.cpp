@@ -293,7 +293,7 @@ string Tablero::estadoDelJuego()
         for (int i = 0; i < 4; i++)
         {
             // Se verifica si alguien fue comido o cayo al rio en cada lugar
-            if (lugares[i]->alguienFueComido() || lugares[i]->alguienCayoAlRio())
+            if (lugares[i]->alguienCayoAlRio() || lugares[i]->alguienFueComido())
             {
                 cout << "Fin del juego" << endl;
 

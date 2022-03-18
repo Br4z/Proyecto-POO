@@ -44,7 +44,6 @@ class Lugar
         Lugar();
         ~Lugar();
         string getNombre();
-        void mostrarPersonajes();
         void addPersonaje(int indice, Personaje* personaje);
         Personaje* getPersonaje(int indice);
         int getNumPersonajes();

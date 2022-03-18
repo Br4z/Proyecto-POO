@@ -20,7 +20,6 @@ using namespace std;
 
 Tablero::Tablero(int numPersonajes)
 {
-    this->numPersonajes = numPersonajes;
     // Se crea un puntero(auxiliar) que apunta a un lugar
     Lugar *aux;
 
@@ -62,7 +61,8 @@ Tablero::~Tablero()
 
 void Tablero::dibujarTablero()
 {    
-
+    //Se guarda el numero de persoanjes de caulquier lugar
+    int numPersonajes = lugares[0]->getNumPersonajes();
     cout << "|"; // Primer caracter
     // Se recorre cada lugar de la lista de punteros lugares de Tablero.h
     for (int l = 0; l < 4; l++) // 4 por el numero de lugares
@@ -159,7 +159,6 @@ void Tablero::mostrarIdsPersonajes()
 }
 
 
-//
 void Tablero::moverPersonaje(string idPersonaje)
 {
     // Var auxiliar que contendra la posicion(lugar) donde se movera el personaje

@@ -38,7 +38,6 @@ class Tablero
 {
     private:
         Lugar *lugares[4]; // Tablero o matriz
-        int numPersonajes;
         vector<string> idsPersonajes;
         vector<string> nombresPersonajes;
 

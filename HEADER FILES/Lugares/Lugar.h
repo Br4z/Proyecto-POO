@@ -41,7 +41,6 @@ class Lugar
         string nombre;
     public:
         Lugar(int _numPersonajes);
-        Lugar();
         ~Lugar();
         string getNombre();
         void addPersonaje(int indice, Personaje* personaje);

@@ -36,11 +36,6 @@ Lugar::Lugar(int _numPersonajes)
     }
 }
 
-Lugar::Lugar()
-{
-
-}
-
 Lugar::~Lugar()
 {
     for(int i = 0; i < numPersonajes; i++)

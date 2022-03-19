@@ -1,6 +1,6 @@
 /*
 
-Archivo: Jugador.cpp
+Archivo: Jugador.h
 Autor:
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>

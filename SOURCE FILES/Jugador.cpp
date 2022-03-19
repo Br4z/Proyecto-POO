@@ -81,6 +81,7 @@ void Jugador::setPersonajes()
         else
         {
             cout << ("Por favor escoga una opcion correcta !");
+            //Esto no sirve
         }
 
         // Var auxiliar que guarda un numero en string

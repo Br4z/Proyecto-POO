@@ -70,7 +70,8 @@ void Tablero::dibujarTablero()
                 {
                     cout << "~~~~~~~~~~~~~~~|";
 
-                } else {
+                } else 
+                {
                 cout << "\t\t|";
 
                 }
@@ -146,11 +147,14 @@ void Tablero::moverPersonaje(string idPersonaje)
     // Var auxiliar que dira si se ha encontrado el personaje
     bool encontrado = false;
 
+    // Var con numero de personajes
+    int numPersonajes = lugares[0]->getNumPersonajes();
+
     // Se recorre cada lugar
     for (int i = 0; i < 4; i++)//i representara el indice de cada lugar
     {
         // Se recorre cada personaje
-        for (int j = 0; j < lugares[i]->getNumPersonajes(); j++)//j representara el indice de cada personaje
+        for (int j = 0; j < numPersonajes; j++)//j representara el indice de cada personaje
         {
             // Se verfica que el puntero personaje no apunte a nullptr
             if (lugares[i]->getPersonaje(j) != nullptr)

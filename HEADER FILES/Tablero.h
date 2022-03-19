@@ -19,7 +19,6 @@ Clase: Tablero
 Responsabilidad: Representar el funcionamiento basico del Tablero del juego
 Relaciones:
 - Contiene Lugar.h
-- Conoce Jugador.h
 */
 
 #pragma once

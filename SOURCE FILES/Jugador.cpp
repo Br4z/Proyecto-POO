@@ -2,14 +2,10 @@
 
 Archivo: Jugador.cpp
 Autor:
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
-Calderon Prieto Brandon
-<bcalderonprieto@gmail.com>
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-03-19
+Fecha Ultima Modificación: 2022-01-19
 Licencia: GNU-GPL
 
 */
@@ -34,7 +30,7 @@ void Jugador::setPersonajes()
     // Var para recibir cuantos personajes extra desea el jugador
     int aux;
     cout << "¿ Deseas agregar personajes extra ?" << endl;
-    cout << "Digita cuantos (en caso de no querrer digita 0): ";
+    cout << "Digitá cuantos (en caso de no querer digitá 0): ";
     cin >> aux;
     // Se le suma los personajes extra al numero de personajes por defecto
     numPersonajes += aux;
@@ -48,10 +44,10 @@ void Jugador::setPersonajes()
     // Puntero auxiliar que apunta a un Personaje
     Personaje *personajeExtra = nullptr;
 
-    // Se hace repite el ciclo segun el numero de personajes extra a añadir
+    // Se hace repite el ciclo según el numero de personajes extra a añadir
     for (int i = 0; i < numPersonajesExtra; i++)
     {
-        // Var que representara el indice o posicion donde se añadira el personaje extra
+        // Var que representara el indice o posición donde se añadirá el personaje extra
         // Se le suma 4 por que los personaje por defecto ocupan las posiciones anteriores
         int pos = i + 4;
         cout << "1. Robot\n"
@@ -61,7 +57,7 @@ void Jugador::setPersonajes()
         cout << "Digite el numero del personaje que desea: ";
         cin >> aux;
 
-        // Segun la opcion digitada se le asigna un personaje al puntero auxiliar PersonajeExtra
+        // Según la opción digitada se le asigna un personaje al puntero auxiliar PersonajeExtra
         if (aux == 1)
         {
             personajeExtra = new Robot();
@@ -80,7 +76,7 @@ void Jugador::setPersonajes()
         }
         else
         {
-            cout << ("Por favor escoga una opcion correcta !");
+            cout << ("Por favor escoge una opción correcta !");
             //Esto no sirve
         }
 
@@ -90,9 +86,9 @@ void Jugador::setPersonajes()
         // Se le añade el auxStr al nombre y el ID del personajeExtra
         personajeExtra->addToNombre(auxStr); // Se le añade (el numero, como diferenciador) al nombre y el ID que ya tiene.
 
-        // Se agrega al personajeExtra en la orilla y en la posicion dada por la var auxiliar pos
+        // Se agrega al personajeExtra en la orilla y en la posición dada por la var auxiliar pos
         tablero->setPersonajeEnLugar(0, pos, personajeExtra);
-        // Notese que siempre se agrega en la orilla, por ello el primer parametro es 0 siempre
+        // Nótese que siempre se agrega en la orilla, por ello el primer parametro es 0 siempre
         personajeExtra = nullptr;
     }
     // Se establecen los IDS de los personajes en el vector idsPersonajes
@@ -120,13 +116,13 @@ void Jugador::moverBarca()
     tablero->moverBarca();
 }
 
-// Devulve true si el juego esta en curso, o false si termino
+// Devuelve true si el juego esta en curso, o false si termino
 bool Jugador::estadoDelJuego()
 {
     //Var auxiliar
     string estado = tablero->estadoDelJuego();
 
-    //Se verfica cada caso
+    //Se verifica cada caso
     if(estado != "En Juego")
     {
         if(estado == "Ganado")
@@ -145,7 +141,7 @@ bool Jugador::estadoDelJuego()
     }
 }
 
-// Muestra los IDS de los persoanjes
+// Muestra los IDS de los personajes
 void Jugador::verIdsPersonajes()
 {
     tablero->mostrarIdsPersonajes();

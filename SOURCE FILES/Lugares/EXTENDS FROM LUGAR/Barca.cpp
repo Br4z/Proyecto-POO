@@ -1,15 +1,11 @@
 /*
 
 Archivo: Barca.cpp
-Autor:
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
+Autor: 
 Calderon Prieto Brandon
 <bcalderonprieto@gmail.com>
-Huertas Cadavid Nicolas Fernando
-<nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-01-29
+Fecha Ultima Modificación: 2022-03-19
 Licencia: GNU-GPL
 
 */
@@ -30,13 +26,13 @@ Barca::~Barca()
 // Retorna true si hay un robot en la barca, si no false
 bool Barca::movimientoPermitido()
 {
-    // Var auxiliar que dira si la barca puede moverse o no
+    // Var auxiliar que dirá si la barca puede moverse o no
     bool auxPermiso = false;
 
     // Puntero auxiliar que apuntara a un Personaje
     Personaje *auxPersonaje = nullptr;
 
-    // String auxiliar que contendra un ID de un personaje
+    // String auxiliar que contendrá un ID de un personaje
     string auxId;
 
     // Se recorre cada personaje del lugar
@@ -45,13 +41,13 @@ bool Barca::movimientoPermitido()
         // Se le asigna un persoanje al puntero auxiliar
         auxPersonaje = personajes[i];
 
-        // Se verfica que auxPersonaje sea distinto de nullptr
+        // Se verifica que auxPersonaje sea distinto de nullptr
         if (auxPersonaje != nullptr)
         {
             // Se le asigna la primera letra del ID del auxPersonaje a auxId
             auxId = auxPersonaje->getId().substr(0, 1);
 
-            // Se verfica si el personaje es un robot
+            // Se verifica si el personaje es un robot
             if (auxId == "R")
             {
                 //La barca puede moverse
@@ -61,7 +57,7 @@ bool Barca::movimientoPermitido()
         }
     }
 
-    // Si anteroriormente no se hallo ningun robot
+    // Si anteriormente no se hallo ningún robot
     if (auxPermiso == false)
     {
         cout << "El robot debe estar en la barca" << endl;
@@ -73,13 +69,13 @@ bool Barca::movimientoPermitido()
 // Retorna true si la barca esta llena, si no false
 bool Barca::lleno()
 {
-    // Contador del numero de persoanjes
+    // Contador del numero de personajes
     int contador = 0;
 
     // Se recorre cada puntero(persoanje) de la barca
     for (int i = 0; i < numPersonajes; i++)//i representara el indice de cada puntero(personaje)
     {
-        // Se verfica que el puntero(personaje) no apunte a nullptr
+        // Se verifica que el puntero(personaje) no apunte a nullptr
         if (personajes[i] != nullptr)
         {
             // Se aumenta el contador
@@ -87,7 +83,7 @@ bool Barca::lleno()
         }
     }
 
-    // Segun el caso dira si esta llena o no
+    // Según el caso dirá si esta llena o no
     if (contador >= 2)
     {
         cout << "La barca esta llena" << endl;

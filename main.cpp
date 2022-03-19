@@ -24,8 +24,8 @@ int main()
         cout << "---------\t---" << endl; // Mas decoracion
         cout << "Digite el id del elemento que desee mover: ";
         cin >> ID;
-        ID[0] = toupper(ID[0]); // Como las ids de los personajes estan en mayusculas
-        // esto se asegura que la entrada siempre sea una mayuscula
+        ID[0] = toupper(ID[0]); // Como las ids de los personajes están en mayúsculas
+        // esto se asegura que la entrada siempre sea una mayúscula
         
         if (ID == "B")
         {

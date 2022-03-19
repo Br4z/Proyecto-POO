@@ -1,15 +1,11 @@
 /*
 
 Archivo: Orilla.cpp
-Autor:
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
+Autor: 
 Calderon Prieto Brandon
 <bcalderonprieto@gmail.com>
-Huertas Cadavid Nicolas Fernando
-<nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-01-29
+Fecha Ultima Modificación: 2022-03-19
 Licencia: GNU-GPL
 
 */

@@ -2,14 +2,10 @@
 
 Archivo: Lugar.cpp
 Autor: 
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
 Calderon Prieto Brandon
 <bcalderonprieto@gmail.com>
-Huertas Cadavid Nicolas Fernando
-<nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-01-29
+Fecha Ultima Modificación: 2022-03-19
 Licencia: GNU-GPL
 
 */
@@ -21,7 +17,7 @@ using namespace std;
 // Constructor de Lugar
 Lugar::Lugar(int _numPersonajes)
 {
-    // Se establece cuantos personajes tendra la lista de punteros(personajes)
+    // Se establece cuantos personajes tendrá la lista de punteros(personajes)
     personajes = new Personaje*[_numPersonajes];
 
     // Se establece el atributo numPersonajes
@@ -52,7 +48,7 @@ int Lugar::getNumPersonajes()
 }
 
 // Añade un personaje a la lista de punteros(personajes)
-void Lugar::addPersonaje(int indice, Personaje* personaje)//indice sera donde se añadira el personaje
+void Lugar::addPersonaje(int indice, Personaje* personaje)//indice sera donde se añadirá el personaje
 {
     // Se añade el personaje dado en el indice dado
     personajes[indice] = personaje;
@@ -84,7 +80,7 @@ bool Lugar::alguienFueComido()
     // Var auxiliar que dice si alguien fue comido
     bool alguienFueComido = true;
 
-    // String auxiliar que contendra el ID de un persoanje
+    // String auxiliar que contendrá el ID de un persoanje
     string aux;
 
     // Contadores de la cantidad de cada personaje en lugar
@@ -101,18 +97,18 @@ bool Lugar::alguienFueComido()
             // Se le asigna la primer letra del ID del personaje a aux
             aux = personajes[i]->getId().substr(0,1);
 
-            // Se realiza una accion segun el caso
-            // Se verfica si hay un robot
+            // Se realiza una accion según el caso
+            // Se verifica si hay un robot
             if(aux == "R")
             {
                 // Se le asigna false a alguien fue comido
                 alguienFueComido = false;
                 // Se termina el for
                 break;
-                // Aclaracion: Como hay un robot en el lugar, nadie puede ser comido
+                // Aclaración: Como hay un robot en el lugar, nadie puede ser comido
             }
 
-            // Segun el caso se amumentara el contador correspondiente
+            // Según el caso se aumentara el contador correspondiente
             else if(aux == "Z")
             {
                 zorros += 1;
@@ -128,22 +124,22 @@ bool Lugar::alguienFueComido()
         }
     }
 
-    // Se verifica si todavia hay la posibilidad de que alguien halla sido comido
+    // Se verifica si todavía hay la posibilidad de que alguien halla sido comido
     // Si anteriormente se halla un robot, esta accion se ignora
     if(alguienFueComido == true)
     {
-        // Se verfica que halla almenos un conejo en el lugar
+        // Se verifica que halla al menos un conejo en el lugar
         if(conejos > 0)
         {
-            // Se verfica que halla almenos un zorro
+            // Se verifica que halla al menos un zorro
             if(zorros > 0)
             {
-                cout << "El zorro se comio al conejo" << endl;
+                cout << "El zorro se comió al conejo" << endl;
             }
-            // Se verfica que halla almenos una lechuga
+            // Se verifica que halla al menos una lechuga
             else if(lechugas>0)
             {
-                cout << "El conejo se comio la lechuga" << endl;
+                cout << "El conejo se comió la lechuga" << endl;
             }
             else
             {
@@ -154,7 +150,7 @@ bool Lugar::alguienFueComido()
         {
             alguienFueComido = false;
         }
-        // Aclaracion: Se verfica primero que haya al menos un conejos ya que si no hay ninguno es claro nadie podra ser comido
+        // Aclaración: Se verifica primero que haya al menos un conejos ya que si no hay ninguno es claro nadie podrá ser comido
     }
 
     return alguienFueComido;
@@ -175,19 +171,19 @@ bool Lugar::lleno()
     // Se recorre cada puntero(personaje) del lugar
     for(int i = 0; i < numPersonajes; i++)//i representara el indice de cada personaje
     {
-        // Se verfica si el puntero(persoanje) es igual a nullptr
+        // Se verifica si el puntero(persoanje) es igual a nullptr
         if(personajes[i] == nullptr)
         {
             auxLleno = false;
             break;
-            // Aclaracion: como un puntero(personaje) es igual a nullptr, el lugar no esta lleno
+            // Aclaración: como un puntero(personaje) es igual a nullptr, el lugar no esta lleno
         }
     }
 
     return auxLleno;
 }
 
-// Esta funcion solo tendra sentido para Rio.h
+// Esta funcion solo tendrá sentido para Rio.h
 bool Lugar::alguienCayoAlRio()
 {
     return false;

@@ -2,23 +2,19 @@
 
 Archivo: Tablero.h
 Autor:
-Getial Getial Juan Sebastian
+Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
-Calderon Prieto Brandon
-<bcalderonprieto@gmail.com>
-Huertas Cadavid Nicolas Fernando
-<nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-03-19
+Fecha Ultima Modificación: 2022-03-19
 Licencia: GNU-GPL
 
 */
 
 /**
 Clase: Tablero
-Responsabilidad: Representar el funcionamiento basico del Tablero del juego
+Responsabilidad: Representar el funcionamiento del Tablero en el juego
 Relaciones:
-- Contiene Lugar.h
+- Contiene Lugares
 */
 
 #pragma once

@@ -2,14 +2,10 @@
 
 Archivo: Tablero.cpp
 Autor:
-Getial Getial Juan Sebastian
+Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
-Calderon Prieto Brandon
-<bcalderonprieto@gmail.com>
-Huertas Cadavid Nicolas Fernando
-<nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-03-19
+Fecha Ultima Modificación: 2022-03-19
 Licencia: GNU-GPL
 
 */
@@ -40,21 +36,21 @@ Tablero::~Tablero()
 
 void Tablero::dibujarTablero()
 {    
-    //Se guarda el numero de persoanjes de caulquier lugar
+    //Se guarda el numero de personajes de cualquier lugar
     int numPersonajes = lugares[0]->getNumPersonajes();
-    cout << "|"; // Primer caracter
+    cout << "|"; // Primer carácter
     // Se recorre cada lugar de la lista de punteros lugares de Tablero.h
     for (int l = 0; l < 4; l++) // 4 por el numero de lugares
     {
         // Se imprime el nombre de cada lugar
         cout << "     " << lugares[l]->getNombre() << "\t|"; // El primer \t es para centrar los nombres de los lugares.
     }
-    cout << endl << " --------------------------------------------------------------- " << endl;
+    cout << endl << " --------------------------------------------------------------- " << endl; // Parte de la decoracion
 
     // Se recorre cada personaje
     for (int i = 0; i < numPersonajes; i++)// i representara el indice de cada personaje
     {
-        cout << "|"; // Primer caracter
+        cout << "|"; // Primer carácter
         // Se recorre cada lugar
         for (int j = 0; j < 4; j++)// j representara el indice de cada lugar
         {
@@ -99,7 +95,7 @@ void Tablero::setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaj
 void Tablero::setIdsPersonajes()
 {
     // Var aux que tiene como valor el numero de personajes
-    int aux = lugares[0]->getNumPersonajes(); // El numero de personajes siempre es igual a los que aparacen en la orilla
+    int aux = lugares[0]->getNumPersonajes(); // El numero de personajes siempre es igual a los que aparecen en la orilla
 
     // Se recorre cada personaje de la orilla
     for (int i = 0; i < aux; i++)//i representara el indice de cada personaje
@@ -141,10 +137,10 @@ void Tablero::mostrarIdsPersonajes()
 
 void Tablero::moverPersonaje(string idPersonaje)
 {
-    // Var auxiliar que contendra la posicion(lugar) donde se movera el personaje
+    // Var auxiliar que contendrá la posición(lugar) donde se movera el personaje
     int auxPos;
     
-    // Var auxiliar que dira si se ha encontrado el personaje
+    // Var auxiliar que dirá si se ha encontrado el personaje
     bool encontrado = false;
 
     // Var con numero de personajes
@@ -156,7 +152,7 @@ void Tablero::moverPersonaje(string idPersonaje)
         // Se recorre cada personaje
         for (int j = 0; j < numPersonajes; j++)//j representara el indice de cada personaje
         {
-            // Se verfica que el puntero personaje no apunte a nullptr
+            // Se verifica que el puntero personaje no apunte a nullptr
             if (lugares[i]->getPersonaje(j) != nullptr)
             {
                 //Se verifica que el ID del personaje sea igual al recibido como parametro
@@ -165,7 +161,7 @@ void Tablero::moverPersonaje(string idPersonaje)
                     // Se crea un puntero personaje auxiliar que apunta al personaje encontrado
                     Personaje *personajeEncontrado = lugares[i]->getPersonaje(j);
 
-                    // Segun el indice(lugar) donde fue encontrado se definira el lugar donde se movera
+                    // Según el indice(lugar) donde fue encontrado se definirá el lugar donde se movera
                     if (i == 0 || i == 2)
                     {
                         // Se le asigna a auxPos el indice(lugar) donde fue encontrado y se le suma 1
@@ -180,7 +176,7 @@ void Tablero::moverPersonaje(string idPersonaje)
                     // Se verifica que el lugar donde se movera el personaje no este lleno
                     if (lugares[auxPos]->lleno() == false)
                     {
-                        // Se pone el personaje en el lugar dado, y en el mismo indice donde se encontro
+                        // Se pone el personaje en el lugar dado, y en el mismo indice donde se encontró
                         lugares[auxPos]->addPersonaje(j, personajeEncontrado);//aux es el personaje
 
                         // Se remueve el personaje del lugar en el que estaba
@@ -208,7 +204,7 @@ void Tablero::moverBarca()
     // Puntero auxiliar que apunta a un lugar
     Lugar *auxLugar = nullptr;
 
-    // Var auxiliar que contendra la posicion donde se movera la barca
+    // Var auxiliar que contendrá la posición donde se movera la barca
     int posAux;
 
     // Se recorre los lugares desde el indice 1 hasta el 2, ya que esas son las posiciones donde puede estar la barca
@@ -223,7 +219,7 @@ void Tablero::moverBarca()
             // Se verifica si la barca puede moverse
             if (auxLugar->movimientoPermitido())
             {
-                // Deacuerdo al indice donde se encuentre la barca se le asigna el valor a posAux
+                // De acuerdo al indice donde se encuentre la barca se le asigna el valor a posAux
                 if (i == 1)
                 {
                     // La barca se movera al indice 2
@@ -244,10 +240,10 @@ void Tablero::moverBarca()
                 // Se mueve la barca al lugar dado por posAux
                 lugares[posAux] = auxLugar;
 
-                // Se remueve la barca de su posicion anterior, NO SE ELIMINA
+                // Se remueve la barca de su posición anterior, NO SE ELIMINA
                 lugares[i] = nullptr;
 
-                // Se pone el lugar anteroriormente guardado donde estaba la barca
+                // Se pone el lugar anteriormente guardado donde estaba la barca
                 lugares[i] = aux;
 
                 //En palabras sencillas, la barca y el lugar donde se mueve se intercambian
@@ -265,7 +261,7 @@ string Tablero::estadoDelJuego()
     //var aux Estado
     string estado = "En Juego";
 
-    // Se verifica si el ultimo lugar(La Meta) esta lleno, es decir si todos los personajes estan ahi
+    // Se verifica si el ultimo lugar(La Meta) esta lleno, es decir si todos los personajes están ahi
     if (lugares[3]->lleno())
     {
         estado = "Ganado";

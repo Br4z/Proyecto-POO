@@ -2,14 +2,10 @@
 
 Archivo: Rio.cpp
 Autor: 
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
 Calderon Prieto Brandon
 <bcalderonprieto@gmail.com>
-Huertas Cadavid Nicolas Fernando
-<nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-02-19
-Fecha Ultima Modificacion: 2022-02-19
+Fecha Creación: 2022-01-29
+Fecha Ultima Modificación: 2022-03-19
 Licencia: GNU-GPL
 
 */
@@ -28,7 +24,7 @@ Rio::~Rio()
 
 }
 
-// Retorna true si hay algun personaje en el rio, si no false
+// Retorna true si hay algún personaje en el rio, si no false
 bool Rio::alguienCayoAlRio()
 {
     // Var auxiliar

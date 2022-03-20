@@ -44,9 +44,12 @@ void Jugador::setPersonajes()
     // Puntero auxiliar que apunta a un Personaje
     Personaje *personajeExtra = nullptr;
 
+    //variable que indicara si se eligio una opcion permitida
+    bool validador;
     // Se hace repite el ciclo según el numero de personajes extra a añadir
     for (int i = 0; i < numPersonajesExtra; i++)
     {
+        validador = true;
         // Var que representara el indice o posición donde se añadirá el personaje extra
         // Se le suma 4 por que los personaje por defecto ocupan las posiciones anteriores
         int pos = i + 4;
@@ -76,20 +79,25 @@ void Jugador::setPersonajes()
         }
         else
         {
-            cout << ("Por favor escoge una opción correcta !");
-            //Esto no sirve
+            cout << "Por favor escoge una opción correcta !" <<endl;
+            i--;
+            validador = false;
         }
 
-        // Var auxiliar que guarda un numero en string
-        string auxStr = to_string(i + 1);
+        //Se verifica que se halla elegido una opcion permitida
+        if(validador)
+        {
+            // Var auxiliar que guarda un numero en string
+            string auxStr = to_string(i + 1);
 
-        // Se le añade el auxStr al nombre y el ID del personajeExtra
-        personajeExtra->addToNombre(auxStr); // Se le añade (el numero, como diferenciador) al nombre y el ID que ya tiene.
+            // Se le añade el auxStr al nombre y el ID del personajeExtra
+            personajeExtra->addToNombre(auxStr); // Se le añade (el numero, como diferenciador) al nombre y el ID que ya tiene.
 
-        // Se agrega al personajeExtra en la orilla y en la posición dada por la var auxiliar pos
-        tablero->setPersonajeEnLugar(0, pos, personajeExtra);
-        // Nótese que siempre se agrega en la orilla, por ello el primer parametro es 0 siempre
-        personajeExtra = nullptr;
+            // Se agrega al personajeExtra en la orilla y en la posición dada por la var auxiliar pos
+            tablero->setPersonajeEnLugar(0, pos, personajeExtra);
+            // Nótese que siempre se agrega en la orilla, por ello el primer parametro es 0 siempre
+            personajeExtra = nullptr;
+        }
     }
     // Se establecen los IDS de los personajes en el vector idsPersonajes
     tablero->setIdsPersonajes();

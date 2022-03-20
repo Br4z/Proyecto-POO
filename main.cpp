@@ -38,10 +38,12 @@ int main()
     }
     if (jugador.getWinOrLoser())
     {
+        jugador.verTablero(); // Imprimo la ultima jugada
         cout << "Felicidades, ganaste el juego !" << endl;
     }
     else
     {
+        jugador.verTablero(); // Imprimo la ultima jugada
         cout << "Has perdido !" << endl;
     }
 

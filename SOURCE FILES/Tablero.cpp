@@ -16,7 +16,7 @@ using namespace std;
 
 Tablero::Tablero(int numPersonajes)
 {
-    //Se agregan los lugares por defecto
+    // Se agregan los lugares por defecto
     lugares[0] = new Orilla(numPersonajes);
     lugares[1] = new Barca(numPersonajes);
     lugares[2] = new Rio(numPersonajes);
@@ -36,7 +36,7 @@ Tablero::~Tablero()
 
 void Tablero::dibujarTablero()
 {    
-    //Se guarda el numero de personajes de cualquier lugar
+    // Se guarda el numero de personajes de cualquier lugar
     int numPersonajes = lugares[0]->getNumPersonajes();
     cout << "|"; // Primer carácter
     // Se recorre cada lugar de la lista de punteros lugares de Tablero.h

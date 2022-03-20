@@ -24,9 +24,9 @@ Lugar::Lugar(int _numPersonajes)
     numPersonajes = _numPersonajes;
 
     // Se recorre cada personaje de la lista de punteros(personajes)
-    for(int i = 0; i < numPersonajes; i++)//i representara el indice de cada personaje
+    for(int i = 0; i < numPersonajes; i++) // i representara el indice de cada personaje
     {
-        //Se le asigna nullptr a cada puntero
+        // Se le asigna nullptr a cada puntero
         personajes[i] = nullptr;
     }
 }
@@ -48,14 +48,14 @@ int Lugar::getNumPersonajes()
 }
 
 // Añade un personaje a la lista de punteros(personajes)
-void Lugar::addPersonaje(int indice, Personaje* personaje)//indice sera donde se añadirá el personaje
+void Lugar::addPersonaje(int indice, Personaje* personaje) // Indice sera donde se añadirá el personaje
 {
     // Se añade el personaje dado en el indice dado
     personajes[indice] = personaje;
 }
 
 // Retorna el puntero(personaje) del indice dado
-Personaje* Lugar::getPersonaje(int indice)//indice sera donde se encuentra el personaje a retornar
+Personaje* Lugar::getPersonaje(int indice)// Indice sera donde se encuentra el personaje a retornar
 {
     return personajes[indice];
 }

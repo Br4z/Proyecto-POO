@@ -12,7 +12,7 @@ Licencia: GNU-GPL
 
 /**
 Clase: Rio
-Responsabilidad: Representar la orilla izquierda hacía la que se dirige la barca
+Responsabilidad: Representar el rio en el juego
 Relaciones: 
 - Es un Lugar
 - Contiene Personajes (Conejo, Robot, Zorro y Lechuga)

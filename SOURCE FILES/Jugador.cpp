@@ -35,7 +35,7 @@ void Jugador::setPersonajes()
     // Se le suma los personajes extra al numero de personajes por defecto
     numPersonajes += aux;
 
-    //Se establece el tablero
+    // Se establece el tablero
     this->tablero = new Tablero(numPersonajes);
 
     // Var que contiene el numero de personajes extra
@@ -122,7 +122,7 @@ bool Jugador::estadoDelJuego()
     //Var auxiliar
     string estado = tablero->estadoDelJuego();
 
-    //Se verifica cada caso
+    // Se verifica cada caso
     if(estado != "En Juego")
     {
         if(estado == "Ganado")
@@ -147,7 +147,7 @@ void Jugador::verIdsPersonajes()
     tablero->mostrarIdsPersonajes();
 }
 
-// Retorna el atributo winOrLoser de Jugador.h
+// Retorna el atributo winOrLoser de Jugador
 bool Jugador::getWinOrLoser()
 {
     return winOrLoser;

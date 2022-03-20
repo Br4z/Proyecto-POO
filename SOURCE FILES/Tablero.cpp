@@ -198,7 +198,7 @@ void Tablero::moverPersonaje(string idPersonaje)
     }
 }
 
-//
+
 void Tablero::moverBarca()
 {
     // Puntero auxiliar que apunta a un lugar
@@ -227,7 +227,7 @@ void Tablero::moverBarca()
                 }
                 else
                 {
-                    //La barca se movera al indice 1
+                    // La barca se movera al indice 1
                     posAux = 1;
                 }
 
@@ -255,7 +255,7 @@ void Tablero::moverBarca()
     }
 }
 
-//
+
 string Tablero::estadoDelJuego()
 {
     //var aux Estado

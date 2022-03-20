@@ -2,10 +2,10 @@
 
 Archivo: Rio.cpp
 Autor: 
-Calderon Prieto Brandon
+Calderón Prieto Brandon
 <bcalderonprieto@gmail.com>
 Fecha Creación: 2022-01-29
-Fecha Ultima Modificación: 2022-03-19
+Fecha Ultima Modificación: 2022-03-20
 Licencia: GNU-GPL
 
 */

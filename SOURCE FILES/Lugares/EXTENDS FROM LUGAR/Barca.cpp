@@ -2,15 +2,15 @@
 
 Archivo: Barca.cpp
 Autor: 
-Calderon Prieto Brandon
+Calderón Prieto Brandon
 <bcalderonprieto@gmail.com>
 Fecha Creación: 2022-01-29
-Fecha Ultima Modificación: 2022-03-19
+Fecha Ultima Modificación: 2022-03-20
 Licencia: GNU-GPL
 
 */
 #ifdef _WIN32
-#include <Windows.h>
+#include <Windows.h> // Libreria para pausar la ejecucion usando Sleep(time in ms), con el objetivo de mostar mensajes
 #else
 #include <unistd.h>
 #endif
@@ -40,7 +40,7 @@ bool Barca::movimientoPermitido()
     string auxId;
 
     // Se recorre cada personaje del lugar
-    for (int i = 0; i < numPersonajes; i++)//i representara el indice de cada persoanje
+    for (int i = 0; i < numPersonajes; i++)// i representara el indice de cada persoanje
     {
         // Se le asigna un persoanje al puntero auxiliar
         auxPersonaje = personajes[i];

@@ -2,7 +2,7 @@
 
 Archivo: Orilla.h
 Autor: 
-Calderon Prieto Brandon
+Calderón Prieto Brandon
 <bcalderonprieto@gmail.com>
 Fecha Creación: 2022-01-29
 Fecha Ultima Modificación: 2022-03-19
@@ -12,7 +12,7 @@ Licencia: GNU-GPL
 
 /**
 Clase: Meta
-Responsabilidad: Representar la orilla donde inicialmente aparecen los personajes
+Responsabilidad: Representar la orilla (derecha) donde inicialmente aparecen los personajes
 Relaciones: 
 - Es un Lugar
 - Contiene Personajes (Conejo, Robot, Zorro y Lechuga)

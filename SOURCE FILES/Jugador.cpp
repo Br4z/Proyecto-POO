@@ -44,7 +44,7 @@ void Jugador::setPersonajes()
     // Puntero auxiliar que apunta a un Personaje
     Personaje *personajeExtra = nullptr;
 
-    //variable que indicara si se eligio una opcion permitida
+    // Variable que indicara si se eligió una opción permitida
     bool validador;
     // Se hace repite el ciclo según el numero de personajes extra a añadir
     for (int i = 0; i < numPersonajesExtra; i++)
@@ -84,7 +84,7 @@ void Jugador::setPersonajes()
             validador = false;
         }
 
-        //Se verifica que se halla elegido una opcion permitida
+        //Se verifica que se halla elegido una opción permitida
         if(validador)
         {
             // Var auxiliar que guarda un numero en string

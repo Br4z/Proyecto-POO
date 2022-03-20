@@ -9,7 +9,11 @@ Fecha Ultima Modificación: 2022-03-19
 Licencia: GNU-GPL
 
 */
-
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
 #include "../../../HEADER FILES/Lugares/EXTENDS FROM LUGAR/Barca.h"
 #include <iostream>
 using namespace std;
@@ -61,6 +65,7 @@ bool Barca::movimientoPermitido()
     if (auxPermiso == false)
     {
         cout << "El robot debe estar en la barca" << endl;
+        Sleep(1000);
     }
 
     return auxPermiso;
@@ -87,6 +92,7 @@ bool Barca::lleno()
     if (contador >= 2)
     {
         cout << "La barca esta llena" << endl;
+        Sleep(1000);
         return true;
     }
     else

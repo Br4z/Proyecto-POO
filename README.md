@@ -6,7 +6,7 @@
 
 - Brandon Calderón Prieto <calderon.brandon@correounivalle.edu.co> <2125974>
 - Juan Sebastian Getial Getial <getial.juan@correounivalle.edu.co> <202124644>
-- Nicolas Huertas <nicolas.huertas@correounivalle.edu.co> <202180569>
+- Nicolas Fernando Huertas Cadavid <nicolas.huertas@correounivalle.edu.co> <202180569>
 
 
 ---

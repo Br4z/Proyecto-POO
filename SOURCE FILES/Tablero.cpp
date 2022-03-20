@@ -2,7 +2,7 @@
 
 Archivo: Tablero.cpp
 Autor:
-Getial Juan Sebastian
+Getial Getial Juan Sebastian
 <getial.juan@correounivalle.edu.co>
 Fecha Creación: 2022-03-19
 Fecha Ultima Modificación: 2022-03-19

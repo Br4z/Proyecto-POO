@@ -26,20 +26,20 @@ using namespace std;
 
 class Jugador
 {
-    private:
-        Tablero *tablero;
-        bool winOrLoser;
+private:
+    Tablero *tablero;
+    bool winOrLoser;
 
-    public:
-        Jugador();
-        ~Jugador();
-        void setPersonajes();
-        void verTablero();
-        void moverPersonaje(string idPersonaje);
-        void moverBarca();
-        bool estadoDelJuego();
-        void verIdsPersonajes();
-        bool getWinOrLoser();
+public:
+    Jugador();
+    ~Jugador();
+    void setPersonajes();
+    void verTablero();
+    void moverPersonaje(string idPersonaje);
+    void moverBarca();
+    bool estadoDelJuego();
+    void verIdsPersonajes();
+    bool getWinOrLoser();
 };
 
 #else

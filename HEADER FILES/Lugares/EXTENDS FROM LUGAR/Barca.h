@@ -27,13 +27,13 @@ using namespace std;
 
 class Barca : public Lugar
 {
-    private:
 
-    public:
-        Barca(int _numPersonajes);
-        virtual ~Barca();
-        virtual bool movimientoPermitido();
-        virtual bool lleno();
+
+public:
+    Barca(int _numPersonajes);
+    virtual ~Barca();
+    virtual bool movimientoPermitido();
+    virtual bool lleno();
 };
 
 #else

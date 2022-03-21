@@ -31,22 +31,22 @@ using namespace std;
 
 class Tablero
 {
-    private:
-        Lugar *lugares[4]; // Tablero o matriz
-        vector<string> idsPersonajes;
-        vector<string> nombresPersonajes;
+private:
+    Lugar *lugares[4]; // Tablero o matriz
+    vector<string> idsPersonajes;
+    vector<string> nombresPersonajes;
 
-    public:
-        Tablero(int numPersonajes);
-        ~Tablero();
-        void dibujarTablero();
-        void setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaje);
-        void setIdsPersonajes();
-        void setNombresPersonajes();
-        void mostrarIdsPersonajes();
-        void moverPersonaje(string idPersonaje);
-        void moverBarca();
-        string estadoDelJuego();
+public:
+    Tablero(int numPersonajes);
+    ~Tablero();
+    void dibujarTablero();
+    void setPersonajeEnLugar(int cualLugar, int indice, Personaje *personaje);
+    void setIdsPersonajes();
+    void setNombresPersonajes();
+    void mostrarIdsPersonajes();
+    void moverPersonaje(string idPersonaje);
+    void moverBarca();
+    string estadoDelJuego();
 };
 
 #else

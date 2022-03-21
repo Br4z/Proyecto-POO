@@ -26,12 +26,11 @@ using namespace std;
 
 class Rio : public Lugar
 {
-    private:
 
-    public:
-        Rio(int _numPersonajes);
-        virtual ~Rio();
-        virtual bool alguienCayoAlRio();
+public:
+    Rio(int _numPersonajes);
+    virtual ~Rio();
+    virtual bool alguienCayoAlRio();
 };
 
 #else

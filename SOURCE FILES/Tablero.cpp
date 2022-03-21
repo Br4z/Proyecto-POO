@@ -261,6 +261,9 @@ string Tablero::estadoDelJuego()
     //var aux Estado
     string estado = "En Juego";
 
+    // Puntero auxiliar que apunta a un lugar
+    Lugar *auxLugar = nullptr;
+
     // Se verifica si el ultimo lugar(La Meta) esta lleno, es decir si todos los personajes están ahi
     if (lugares[3]->lleno())
     {
@@ -271,8 +274,21 @@ string Tablero::estadoDelJuego()
         // Se recorre cada lugar
         for (int i = 0; i < 4; i++)
         {
-            // Se verifica si alguien fue comido o cayo al rio en cada lugar
-            if (lugares[i]->alguienCayoAlRio() || lugares[i]->alguienFueComido())
+            // Se le asigna al puntero auxiliar un lugar del tablero
+            auxLugar = lugares[i];
+            // Se verifica si alguien cayo en el rio
+            if(auxLugar->getNombre() == " Rio")
+            {
+                if(auxLugar->alguienCayoAlRio())
+                {
+                    cout << "Fin del juego" << endl;
+
+                    estado = "Perdido";
+                    // Se termina el for
+                    break;                    
+                }
+            // Se verifica si alguien fue comido    
+            }else if (auxLugar->alguienFueComido())
             {
                 cout << "Fin del juego" << endl;
 

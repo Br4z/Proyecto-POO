@@ -137,7 +137,7 @@ bool Lugar::alguienFueComido()
                 cout << "El zorro se comió al conejo" << endl;
             }
             // Se verifica que halla al menos una lechuga
-            else if(lechugas>0)
+            else if(lechugas > 0)
             {
                 cout << "El conejo se comió la lechuga" << endl;
             }

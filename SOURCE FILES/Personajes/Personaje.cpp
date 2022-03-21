@@ -1,15 +1,11 @@
 /*
 
-Archivo: Personaje.cpp
+Archivo: Jugador.cpp
 Autor:
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
-Calderon Prieto Brandon
-<bcalderonprieto@gmail.com>
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-03-19
+Fecha Ultima Modificación: 2022-01-19
 Licencia: GNU-GPL
 
 */
@@ -31,7 +27,7 @@ string Personaje::getNombre()
     return nombre;
 }
 
-// Le añade algun string al nombre y al ID del personaje
+// Le añade algún string al nombre y al ID del personaje
 void Personaje::addToNombre(string strExtra)
 {
     this->nombre += strExtra;

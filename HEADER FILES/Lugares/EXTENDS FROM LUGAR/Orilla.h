@@ -15,7 +15,7 @@ Clase: Meta
 Responsabilidad: Representar la orilla (derecha) donde inicialmente aparecen los personajes
 Relaciones: 
 - Es un Lugar
-- Conoce a  Personajes (Conejo, Robot, Zorro y Lechuga)
+- Conoce a Personajes (Conejo, Robot, Zorro y Lechuga)
 
 */
 
@@ -27,11 +27,10 @@ using namespace std;
 
 class Orilla : public Lugar
 {
-    private:
 
-    public:
-        Orilla(int _numPersonajes);
-        ~Orilla();
+public:
+    Orilla(int _numPersonajes);
+    ~Orilla();
 };
 
 #else

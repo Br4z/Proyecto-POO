@@ -31,22 +31,23 @@ using namespace std;
 
 class Lugar
 {
-    protected:
-        Personaje **personajes;
-        int numPersonajes;
-        string nombre;
-    public:
-        Lugar(int _numPersonajes);
-        ~Lugar();
-        string getNombre();
-        void addPersonaje(int indice, Personaje* personaje);
-        Personaje* getPersonaje(int indice);
-        int getNumPersonajes();
-        void removerPersonaje(int indice);
-        bool alguienFueComido();
-        virtual bool movimientoPermitido();
-        virtual bool lleno();
-        virtual bool alguienCayoAlRio();
+protected:
+    Personaje **personajes;
+    int numPersonajes;
+    string nombre;
+public:
+    Lugar(int _numPersonajes);
+    ~Lugar();
+    string getNombre();
+    void addPersonaje(int indice, Personaje* personaje);
+    Personaje* getPersonaje(int indice);
+    int getNumPersonajes();
+    void removerPersonaje(int indice);
+    bool alguienFueComido();
+    virtual bool movimientoPermitido();
+    virtual bool lleno();
+    virtual bool alguienCayoAlRio(); // Se tiene que definir aquí porque se van a menejar
+    // listas con punteros de Lugar, asi que todos los metodos tienen que estar en esta clase
 };
 
 #else

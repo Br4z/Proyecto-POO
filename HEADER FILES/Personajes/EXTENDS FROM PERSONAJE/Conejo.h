@@ -1,15 +1,11 @@
 /*
 
 Archivo: Conejo.h
-Autor: 
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
-Calderon Prieto Brandon
-<bcalderonprieto@gmail.com>
+Autor:
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-03-19
+Fecha Ultima Modificación: 2022-01-19
 Licencia: GNU-GPL
 
 */
@@ -18,7 +14,7 @@ Licencia: GNU-GPL
 Clase: Conejo
 Responsabilidad: Representar a un conejo del juego y su funcionamiento
 Relaciones: 
-- Es un Personaje.h
+- Es un Personaje
 */
 
 #pragma once
@@ -30,11 +26,11 @@ using namespace std;
 
 class Conejo : public Personaje
 {
-    private:
 
-    public:
-        Conejo();
-        ~Conejo();
+
+public:
+    Conejo();
+    ~Conejo();
 };
 
 #else

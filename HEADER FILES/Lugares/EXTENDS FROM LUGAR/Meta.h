@@ -27,11 +27,10 @@ using namespace std;
 
 class Meta : public Lugar
 {
-    private:
 
-    public:
-        Meta(int _numPersonajes);
-        ~Meta();
+public:
+    Meta(int _numPersonajes);
+    ~Meta();
 };
 
 #else

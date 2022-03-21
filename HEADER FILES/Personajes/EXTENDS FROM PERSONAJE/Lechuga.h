@@ -1,15 +1,11 @@
 /*
 
 Archivo: Lechuga.h
-Autor: 
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
-Calderon Prieto Brandon
-<bcalderonprieto@gmail.com>
+Autor:
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-03-19
+Fecha Ultima Modificación: 2022-01-19
 Licencia: GNU-GPL
 
 */
@@ -19,7 +15,7 @@ Licencia: GNU-GPL
 Clase: Lechuga
 Responsabilidad: Representar a una lechuga del juego y su funcionamiento
 Relaciones: 
-- Es un Personaje.h
+- Es un Personaje
 
 */
 
@@ -32,11 +28,11 @@ using namespace std;
 
 class Lechuga : public Personaje
 {
-    private:
 
-    public:
-        Lechuga();
-        ~Lechuga();
+
+public:
+    Lechuga();
+    ~Lechuga();
 };
 
 #else

@@ -2,15 +2,11 @@
 /*
 
 Archivo: Personaje.h
-Autor: 
-Getial Getial Juan Sebastian
-<getial.juan@correounivalle.edu.co>
-Calderon Prieto Brandon
-<bcalderonprieto@gmail.com>
+Autor:
 Huertas Cadavid Nicolas Fernando
 <nicolas.huertas@correounivalle.edu.co>
-Fecha Creacion: 2022-01-29
-Fecha Ultima Modificacion: 2022-01-29
+Fecha Creación: 2022-03-19
+Fecha Ultima Modificación: 2022-01-19
 Licencia: GNU-GPL
 
 */
@@ -18,7 +14,7 @@ Licencia: GNU-GPL
 /**
 Clase: Personaje
 Responsabilidad: Representar a un personaje del juego y su funcionamiento
-Relaciones: Ninguna
+Relaciones: NINGUNA
 */
 
 #pragma once
@@ -31,15 +27,15 @@ using namespace std;
 
 class Personaje
 {
-    protected:
-        string nombre;
-        string ID;
-    public:
-        Personaje();
-        ~Personaje();
-        string getNombre();
-        void addToNombre(string nombre);
-        string getId();
+protected:
+    string nombre;
+    string ID;
+public:
+    Personaje();
+    ~Personaje();
+    string getNombre();
+    void addToNombre(string nombre);
+    string getId();
 };
 
 #else

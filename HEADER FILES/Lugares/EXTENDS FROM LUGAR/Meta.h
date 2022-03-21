@@ -15,7 +15,7 @@ Clase: Meta
 Responsabilidad: Representar la meta(orilla izquierda) donde tienen que llegar los personajes
 Relaciones: 
 - Es un Lugar
-- Contiene Personajes (Conejo, Robot, Zorro, Lechuga)
+- Conoce a  Personajes (Conejo, Robot, Zorro, Lechuga)
 
 */
 

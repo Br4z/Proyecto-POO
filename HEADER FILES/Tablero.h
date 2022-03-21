@@ -14,7 +14,7 @@ Licencia: GNU-GPL
 Clase: Tablero
 Responsabilidad: Representar el funcionamiento del Tablero en el juego
 Relaciones:
-- Contiene Lugares
+- Conoce a Lugares
 */
 
 #pragma once

@@ -15,7 +15,7 @@ Clase: Barca
 Responsabilidad: Representar el funcionamiento de la barca en el juego
 Relaciones: 
 - Es un Lugar
-- Contiene Personajes (Zorro, Conejo, Lechuga y Robot)
+- Conoce a  Personajes (Zorro, Conejo, Lechuga y Robot)
 */
 
 #pragma once

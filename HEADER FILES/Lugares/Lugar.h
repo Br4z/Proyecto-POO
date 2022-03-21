@@ -15,7 +15,7 @@ Licencia: GNU-GPL
 Clase: Lugar
 Responsabilidad: Representar cada uno de los lugares del juego y su funcionamiento
 Relaciones: 
-- Contiene Personajes (Zorro, Conejo, Lechuga y Robot.h)
+- Conoce a  Personajes (Zorro, Conejo, Lechuga y Robot.h)
 */
 
 #pragma once

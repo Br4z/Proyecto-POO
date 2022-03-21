@@ -112,7 +112,7 @@ void Tablero::setNombresPersonajes()
     int aux = lugares[0]->getNumPersonajes();
 
     // Se recorre cada personaje de la orilla
-    for (int i = 0; i < aux; i++)//i representara el indice de cada personaje
+    for (int i = 0; i < aux; i++)// i representara el indice de cada personaje
     {
         // Se agrega el nombre de cada personaje de la orilla, por ello "lugares[0]" no cambia
         nombresPersonajes.push_back(lugares[0]->getPersonaje(i)->getNombre());

@@ -32,7 +32,7 @@ using namespace std;
 class Lugar
 {
 protected:
-    Personaje **personajes;
+    Personaje **personajes;// Puntero tipo puntero de personajes, para hacer un array dinamico
     int numPersonajes;
     string nombre;
 public:

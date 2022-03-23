@@ -38,7 +38,7 @@ Lugar::~Lugar()
         delete personajes[i];
         personajes[i] = nullptr;
     }
-    delete personajes;
+    delete[] personajes;
 }
 
 

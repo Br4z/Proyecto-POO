@@ -124,7 +124,7 @@ bool Lugar::alguienFueComido()
         }
     }
 
-    // Se verifica si todavía hay la posibilidad de que alguien halla sido comido
+    // Se verifica si todavía hay la posibilidad de que alguien haya sido comido
     // Si anteriormente se halla un robot, esta accion se ignora
     if(alguienFueComido == true)
     {

@@ -5,16 +5,17 @@ using namespace std;
 
 int main()
 {
+    system("clear");
     string decoracion = " --------------------------------------------------------------- \n";
     string ID;
     Jugador jugador;
     // Se establecen los personajes
     jugador.setPersonajes();
     cout << "Bienvenido al juego" << endl;
+    system("clear");
     // Se verifica el estado del juego en cada ciclo
-    while (jugador.estadoDelJuego())
+    do
     {
-        system("clear");
         // Se dibuja el tablero
         cout << decoracion;
         jugador.verTablero();
@@ -35,7 +36,9 @@ int main()
         {
             jugador.moverPersonaje(ID);
         }
-    }
+        system("clear");
+    }while (jugador.estadoDelJuego());
+
     if (jugador.getWinOrLoser())
     {
         jugador.verTablero(); // Imprimo la ultima jugada
